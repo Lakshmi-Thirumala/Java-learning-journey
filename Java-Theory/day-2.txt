@@ -1,0 +1,24 @@
+Day Two: Compiler, Interpreter, and Java History 
+
+Compiler and Interpreter in Java
+Java uses both a compiler and the JVM (interpreter + JIT compiler).
+
+Compiler (javac): Converts .java source code into .class bytecode.
+Bytecode is platform-independent.
+Enables Java’s principle: Write Once, Run Anywhere (WORA).
+Flow: .java → Compiler → .class (Bytecode)
+
+JVM: Reads and executes bytecode.
+Converts bytecode into native machine code at runtime.
+Flow: .class (Bytecode) → JVM → Machine Code → Execution
+
+Key Feature Achieved:  
+Platform Independence ✅
+
+History of Java
+1991: Project Oak started by James Gosling and team at Sun Microsystems.
+1995: Oak renamed to Java, officially released.
+2010: Oracle acquired Sun Microsystems, Java became an Oracle product.
+2014: Java 8 released — major update introducing Lambda Expressions, Streams API, Functional Interfaces, Optional, and new Date & Time API.
+Present (2026): Current release is Java 26.
+
