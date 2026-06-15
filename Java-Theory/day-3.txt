@@ -1,1 +1,40 @@
-day -3
+### Day Three: Features of Java 
+
+- **Platform Independent**  
+  - `.java` source code is compiled into `.class` bytecode.  
+  - Bytecode runs on any OS with a JVM.  
+  - Enables *Write Once, Run Anywhere (WORA)*.
+
+- **Strongly Typed Language**  
+  - Every variable must have a declared data type.  
+  - Type checking happens during compilation.  
+  - Example:  
+    ```java
+    int age = 25;
+    String name = "Lakshmi";
+    ```
+
+- **Robust**  
+  - Provides exception handling (`try-catch-finally`).  
+  - Strong memory management reduces crashes and runtime errors.
+
+- **Automatic Garbage Collection**  
+  - JVM automatically removes unused objects from memory.  
+  - No need for manual memory management.
+
+- **Object-Oriented Programming**  
+  - Based on encapsulation, inheritance, polymorphism, and abstraction.
+
+- **Backward Compatibility**  
+  - Old Java programs usually continue to work on newer versions.  
+  - Helps organizations upgrade without rewriting everything.
+
+- **Fast Execution**  
+  - Uses compiler (`javac`), JVM interpreter, and JIT compiler.  
+  - JIT converts frequently used bytecode into native machine code for better performance.
+
+- **No Pointers**  
+  - Java does not expose pointers like C/C++.  
+  - Programmers cannot directly access memory addresses.  
+  - Improves security and reliability.  
+  - Memory management handled by JVM and Garbage Collector.
