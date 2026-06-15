@@ -1,4 +1,4 @@
-### Day Eight: Data Types in Java
+### Day 8: Data Types in Java
 
 - **Primitive Data Types** (8 types, built-in)  
   - **Integer Types:**  
