@@ -1,0 +1,72 @@
+### Day 11: Logical Operators & Precedence
+
+- **Logical Operators**  
+  Operate only on boolean values.  
+  - `&&` → Logical AND  
+  - `||` → Logical OR  
+  - `!` → Logical NOT  
+
+  **Truth Table for AND (`&&`):**  
+  - `false && false` → false  
+  - `true && false` → false  
+  - `false && true` → false  
+  - `true && true` → true  
+
+  **Truth Table for OR (`||`):**  
+  - `false || false` → false  
+  - `true || false` → true  
+  - `false || true` → true  
+  - `true || true` → true  
+
+  **NOT (`!`):**  
+  - `!true` → false  
+  - `!false` → true  
+
+---
+
+- **Short-Circuit Evaluation**  
+  Java evaluates logical operators efficiently:  
+  - For `&&` (AND):  
+    - If the **first operand is false**, the whole expression is false.  
+    - The second condition is **not evaluated**.  
+   
+    System.out.println(false && (10/0 == 0)); // false, no error
+
+  - For `||` (OR):  
+    - If the **first operand is true**, the whole expression is true.  
+    - The second condition is **not evaluated**.  
+   
+    System.out.println(true || (10/0 == 0)); // true, no error
+    
+
+---
+
+- **Operator Precedence**  
+  Determines the order in which operations are evaluated.  
+
+  **High → Low Precedence:**  
+  1. **Parentheses `()`** → force evaluation order  
+  2. **Unary Operators** (`++`, `--`, `!`)  
+     - `!` has higher precedence than `++`/`--`  
+     - Unary operators are evaluated **right to left**  
+  3. **Arithmetic Operators**  
+     - `*`, `/`, `%` (evaluated left to right)  
+     - `+`, `-` (evaluated left to right)  
+  4. **Relational Operators**  
+     - `<`, `>`, `<=`, `>=`, `==`, `!=` (evaluated left to right)  
+  5. **Logical Operators**  
+     - `!` > `&&` > `||`  
+
+---
+
+### ✅ Day 11 Summary
+- Logical operators: `&&`, `||`, `!`  
+- `&&` → true only if both operands are true  
+- `||` → true if at least one operand is true  
+- `!` → negates the boolean value  
+- Short-circuit evaluation:  
+  - `&&` stops at first false  
+  - `||` stops at first true  
+- Precedence order:  
+  - `()` > Unary (`++`, `--`, `!`) > Arithmetic > Relational > Logical  
+  - Within logical: `!` > `&&` > `||`  
