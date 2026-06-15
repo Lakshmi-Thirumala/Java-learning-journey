@@ -1,4 +1,4 @@
-### Day 9: Operators in Java ☕
+### Day 9: Operators in Java 
 
 - **Arithmetic Operators**  
   - `+` → Addition  
