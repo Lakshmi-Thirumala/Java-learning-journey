@@ -1,0 +1,49 @@
+## 📘 Day 12: Ternary Operator & Scanner Input
+
+### 🔹 Ternary Operator
+- Syntax:  
+ 
+  condition ? trueStatement : falseStatement
+ 
+- Example:  
+ 
+  int number = -5;
+  String result = number >= 0 ? "Non-negative" : "Negative";
+ 
+- **Nested ternary** for multiple conditions:  
+ 
+  number >= 0 ? (number > 0 ? "Positive" : "Zero") : "Negative";  instead write like 
+  number < 0 ? "Negative" : number==0 ? "Zero" : "Positive" ;
+  
+- ✅ Rule: Every ternary must have both `?` and `:` parts.  
+- ⚠️ Readability: use multiple conditions after :
+  (You can chain ternaries by putting another condition after the :)
+
+---
+
+### 🔹 Scanner Class
+Used for dynamic input from the console.
+
+
+import java.util.Scanner;
+
+Scanner sc = new Scanner(System.in);
+
+System.out.println("Enter a Number:");
+int num = sc.nextInt();
+System.out.println(num);
+sc.nextLine(); // consume leftover newline
+System.out.println("Enter your Name:");
+String name = sc.nextLine();
+System.out.println(name);
+
+
+---
+
+### 🔹 Observation
+- When mixing `int` and `String` inputs:
+  - `nextInt()` reads only the number, leaving the newline (`\n`) in the buffer.  
+  - `nextLine()` immediately consumes that newline → returns empty string.  
+- ✅ Fix: Add an extra `sc.nextLine()` after reading an integer before reading a string.
+
+---
