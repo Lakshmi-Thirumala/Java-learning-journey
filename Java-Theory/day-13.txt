@@ -1,0 +1,89 @@
+## 📘 Day 13: Conditional Statements
+
+### 🔹 If Statement
+- Syntax:
+ 
+  if (condition) {
+      // code executes if condition is true
+  }
+ 
+- The condition must evaluate to **true/false** (boolean).  
+- Example:
+ 
+  if (num > 0) {
+      System.out.println("Positive");
+  }
+ 
+
+---
+
+### 🔹 If-Else Statement
+- Used when you want two possible paths.  
+- Example:
+ 
+  if (num % 2 == 0) {
+      System.out.println("Even");
+  } else {
+      System.out.println("Odd");
+  }
+ 
+
+---
+
+### 🔹 If-Else If-Else
+- Used for multiple conditions.  
+- Example:
+ 
+  if (num > 0) {
+      System.out.println("Positive");
+  } else if (num == 0) {
+      System.out.println("Zero");
+  } else {
+      System.out.println("Negative");
+  }
+
+
+---
+
+### 🔹 Rules & Combinations
+- ✅ You can write a **standalone `if`**.  
+- ❌ You cannot write `else` alone — it must follow an `if`.  
+- Valid combinations:
+  - `if`
+  - `if-else`
+  - `if-else if`
+  - `if-else if-else`
+  - `if-else-if` (chain of conditions)
+
+---
+
+### 🔹 Example Program
+
+import java.util.Scanner;
+
+public class Day13 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter a number:");
+        int num = sc.nextInt();
+
+        if (num > 0) {
+            System.out.println("Positive");
+        } else if (num == 0) {
+            System.out.println("Zero");
+        } else {
+            System.out.println("Negative");
+        }
+    }
+}
+
+
+---
+
+### ✅ Day 13 Summary
+- **If** → single condition.  
+- **If-Else** → two paths.  
+- **If-Else If-Else** → multiple paths.  
+- `else` cannot exist without `if`.  
+- Choose the right structure based on how many conditions you need to check.
