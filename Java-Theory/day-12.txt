@@ -24,6 +24,19 @@
 ### 🔹 Scanner Class
 Used for dynamic input from the console.
 
+// Reading different types
+byte b = sc.nextByte();     // byte
+short s = sc.nextShort();   // short
+int i = sc.nextInt();       // int
+long l = sc.nextLong();     // long
+float f = sc.nextFloat();   // float
+double d = sc.nextDouble(); // double
+
+// Reading strings
+String str1 = sc.next();    // single word (stops at space)
+String str2 = sc.nextLine();// full line (can include spaces)
+
+
 
 import java.util.Scanner;
 
