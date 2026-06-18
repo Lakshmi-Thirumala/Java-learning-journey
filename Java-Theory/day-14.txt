@@ -1,0 +1,62 @@
+## 📘 Day 14: Nested If & Switch Statement
+
+### 🔹 Nested If
+- An `if` statement can contain another `if` inside it.  
+- Syntax:
+ 
+  if (condition1) {
+      if (condition2) {
+          // code executes if both condition1 and condition2 are true
+      } else {
+          // executes if condition1 true but condition2 false
+      }
+  } else {
+      // executes if condition1 is false
+  }
+
+- ✅ Rule: `if` always takes a **boolean condition**. 
+  
+- Example:
+ 
+  if (num > 0) {
+      if (num % 2 == 0) {
+          System.out.println("Positive Even");
+      } else {
+          System.out.println("Positive Odd");
+      }
+  } else {
+      System.out.println("Not Positive");
+  }
+
+### 🔹 Switch Statement
+- Used when you want to check one variable against multiple possible values.  
+- Works with **int, char, String, enum** types.  
+- Syntax:
+ 
+  switch (expression) {
+      case value1:
+          // statements
+          break;
+      case value2:
+          // statements
+          break;
+      default:
+          // statements if no case matches
+  }
+ 
+- Example:
+ 
+  int day = 3;
+  switch (day) {
+      case 1:
+          System.out.println("Monday");
+          break;
+      case 2:
+          System.out.println("Tuesday");
+          break;
+      case 3:
+          System.out.println("Wednesday");
+          break;
+      default:
+          System.out.println("Invalid day");
+  }
