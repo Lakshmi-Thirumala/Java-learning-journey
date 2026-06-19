@@ -1,0 +1,42 @@
+## 📘 Day 15: Loops in Java
+
+### 🔹 For Loop
+- Used when we know **exactly how many iterations** we want (fixed count).  
+- Syntax:
+  
+  for(initialise; condition; increment/decrement) {
+      // statements
+  }
+
+- Example:
+ 
+  for(int i = 1; i <= 5; i++) {
+      System.out.println("Iteration: " + i);
+  }
+
+- ✅ Best for fixed ranges.
+
+
+
+### 🔹 While Loop
+- Used when we **don’t know the exact number of iterations**, but we keep looping until a condition becomes false.  
+- Syntax:
+ 
+  initialise;
+  while(condition) {
+      // statements
+      // update condition
+  }
+ 
+- Example:
+ 
+  int i = 1;
+  while(i <= 5) {
+      System.out.println("Iteration: " + i);
+      i++;
+  }
+
+- ⚠️ Important: If the condition never becomes false, the loop runs **infinitely**.  
+- That’s why in real-time coding, careless use of `while` can be dangerous — it may hang the program.
+
+
