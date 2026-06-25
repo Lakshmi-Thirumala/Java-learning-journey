@@ -1,6 +1,6 @@
-## 📘 Day 17: Nested Loops, Break, Continue, Labels
+## 📘 Day 17: Nested For Loop
 
-### 🔹 Nested For Loops
+### 🔹 Nested For Loop
 - A loop inside another loop.  
 - Syntax:
  
