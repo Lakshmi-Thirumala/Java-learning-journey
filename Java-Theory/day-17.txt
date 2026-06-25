@@ -1,1 +1,82 @@
+## 📘 Day 17: Nested Loops, Break, Continue, Labels
 
+### 🔹 Nested For Loops
+- A loop inside another loop.  
+- Syntax:
+ 
+  for(initialisation; condition; updation) {
+      for(initialisation; condition; updation) {
+          // statements
+      }
+  }
+
+- Example:
+
+  for(int i = 1; i <= 3; i++) {
+      for(int j = 1; j <= 2; j++) {
+          System.out.println("i=" + i + ", j=" + j);
+      }
+  }
+
+- ⚠️ Not used much in real-time unless working with matrices, patterns, or nested data.
+
+
+### 🔹 Break in Loops
+- Exits the **current loop** immediately when condition is met.  
+- Example:
+
+  for(int i = 1; i <= 3; i++) {
+      for(int j = 1; j <= 3; j++) {
+          if(j == 2) break; // exits inner loop
+          System.out.println("i=" + i + ", j=" + j);
+      }
+  }
+
+- ✅ Comes out of the **inner loop** only.
+
+---
+
+### 🔹 Continue in Loops
+- Skips the current iteration and moves to the next.  
+- Example:
+ 
+  for(int i = 1; i <= 3; i++) {
+      for(int j = 1; j <= 3; j++) {
+          if(j == 2) continue; // skips j=2
+          System.out.println("i=" + i + ", j=" + j);
+      }
+  }
+
+
+---
+
+### 🔹 Labels in Loops
+- You can give a **name** to a loop and use it with `break` or `continue`.  
+- Syntax:
+ 
+  labelName:
+  for(initialisation; condition; updation) {
+      for(initialisation; condition; updation) {
+          if(condition) break labelName;
+          // statements
+      }
+  }
+ 
+- Example:
+ 
+  outer:
+  for(int i = 1; i <= 3; i++) {
+      for(int j = 1; j <= 3; j++) {
+          if(j == 2) break outer; // exits outer loop
+          System.out.println("i=" + i + ", j=" + j);
+      }
+  }
+ 
+
+---
+
+### ✅ Day 17 Summary
+- **Nested loops**: loop inside another loop, useful for patterns/matrices.  
+- **Break**: exits the current loop.  
+- **Continue**: skips current iteration.  
+- **Labels**: allow breaking/continuing outer loops directly.  
