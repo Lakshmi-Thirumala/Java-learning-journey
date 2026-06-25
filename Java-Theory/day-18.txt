@@ -50,7 +50,28 @@
           System.out.println("i=" + i + ", j=" + j);
       }
   }
- 
+
+---
+
+### 🔹 Control Flow Statements
+These are special statements that alter the normal flow of execution in loops or conditional blocks.
+break and continue are control flow statements that can be used in any loop structure (for, while, do-while) and also inside a switch statement.
+
+1. **break statement**  
+   - Official name: **Break Statement**  
+   - Purpose: Terminates the loop or switch immediately and transfers control to the statement after the loop/switch.  
+
+2. **continue statement**  
+   - Official name: **Continue Statement**  
+   - Purpose: Skips the current iteration of the loop and jumps to the next iteration.  
+
+3. **return statement** (related but broader)  
+   - Official name: **Return Statement**  
+   - Purpose: Exits from a method and optionally returns a value.  
+
+4. **labels**  
+   - Official name: **Labeled Statements**  
+   - Purpose: Give a name to a loop, so `break` or `continue` can target that specific loop (useful in nested loops).  
 
 ---
 
