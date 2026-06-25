@@ -1,1 +1,52 @@
-.
+## 📘 Day 16: While Loop vs Do-While Loop
+
+### 🔹 While Loop
+- **Entry-controlled loop** → condition is checked *before* executing the body. 
+
+- Syntax:
+ 
+  initialisation;
+  while(condition) {
+      // statements
+      // updation
+  }
+
+- ✅ Executes only if the condition is true at the start.  
+- ⚠️ Updation is not mandatory → if you forget to update, the loop can run infinitely.  
+- ⚠️ Considered “dangerous” in real-time if not carefully written, because infinite loops can hang programs.  
+- Example:
+  
+  int i = 1;
+  while(i <= 5) {
+      System.out.println("Iteration: " + i);
+      i++;
+  }
+
+---
+
+### 🔹 Do-While Loop
+- **Exit-controlled loop** → condition is checked *after* executing the body. 
+
+- Syntax:
+ 
+  do {
+      // statements
+      // updation
+  } while(condition);
+ 
+- ✅ Guarantees at least **one execution**, even if the condition is false.  
+- Example:
+  
+  int i = 1;
+  do {
+      System.out.println("Iteration: " + i);
+      i++;
+  } while(i <= 5);
+
+
+---
+
+### 🔹 Key Differences
+Initial condition false in while → no execution.
+
+Initial condition false in do‑while → executes once, then stops.
