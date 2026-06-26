@@ -1,4 +1,4 @@
-## 📘 Day 19: Methods in Java
+## 📘 Day 19: Methods in Java,Instance vs Static Methods
 
 ### 🔹 What is a Method?
 - A **method** is a block of code written once and reused many times.  
@@ -43,10 +43,63 @@ public class Main {
 
 ClassName objectName = new ClassName();
 objectName.methodName();
-```
+
+
+
+### 🔹 Instance Method
+- Also called **non-static method**.  
+- Belongs to an **object** of the class.  
+- To call it, you must first **create an object**.  
+- Example:
+
+  class Calculator {
+      int add(int a, int b) {   // instance method
+          return a + b;
+      }
+  }
+
+  public class Main {
+      public static void main(String[] args) {
+          Calculator calc = new Calculator(); // object creation
+          System.out.println(calc.add(5, 10)); // call instance method
+      }
+  }
+
+
+
+### 🔹 Static Method
+- Belongs to the **class itself**, not to any object.  
+- Can be called directly using the **class name**.  
+- Example:
+ 
+  class Calculator {
+      static int multiply(int a, int b) {   // static method
+          return a * b;
+      }
+  }
+
+  public class Main {
+      public static void main(String[] args) {
+          System.out.println(Calculator.multiply(5, 10)); // call static method
+      }
+  }
+ 
+
+### 🔹 Why is `main` Static?
+- The **JVM** calls the `main` method to start the program.  
+- JVM does **not create objects** of your class automatically.  
+- If `main` were non-static, JVM would need an object first — which it doesn’t do.  
+- So `main` is made **static**, allowing JVM to call it directly by class name.
+
+
+### ✅ Key Takeaway
+- **Instance method** → needs an object.  
+- **Static method** → belongs to the class, no object needed.  
+- **Main method** → static, because JVM calls it directly without creating objects.
 
 ### ✅ Day 19 Summary
 - Methods = reusable code blocks.  
 - Syntax: `returnType methodName(parameters) {}`.  
 - Call methods using objects.  
-- Return types can be primitive, non-primitive, or objects.  
+- Return types can be primitive, non-primitive, or objects. 
+
