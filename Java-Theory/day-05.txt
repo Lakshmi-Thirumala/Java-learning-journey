@@ -35,10 +35,10 @@
        Student s = new Student();
        s = null; // eligible for garbage collection
 
----
+
 
 ### ✅ Day 5 Summary
-```
+
 JDK
  └── JRE
       └── JVM
@@ -53,6 +53,3 @@ JDK
                 ├── Interpreter
                 ├── JIT Compiler
                 └── Garbage Collector
----
-
-Would you like me to prepare a **Day 6 template** so you can continue documenting variables and data types in the same structured style?
