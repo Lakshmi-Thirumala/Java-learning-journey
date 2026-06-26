@@ -1,4 +1,4 @@
-### Day Seven: IDE, Import, and Naming Conventions 
+### Day 7: IDE, Import, and Naming Conventions 
 
 - **IDE (Integrated Development Environment)**  
   - Provides tools for Java development in one place.  
