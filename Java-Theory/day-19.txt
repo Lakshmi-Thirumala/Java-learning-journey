@@ -1,1 +1,52 @@
+## 📘 Day 19: Methods in Java
 
+### 🔹 What is a Method?
+- A **method** is a block of code written once and reused many times.  
+- Helps avoid repetitive code.  
+- Can return values or just perform actions.  
+
+
+### 🔹 Syntax
+returnType methodName(parameters) {
+    // statements
+}
+
+- **returnType** → can be primitive (int, boolean), non-primitive (String), or objects.  
+- **methodName** → written in **camelCase** (e.g., `calculateSum`).  
+- **parameters** → inputs to the method (optional).  
+
+
+### 🔹 Example
+public int addNumbers(int a, int b) {
+    return a + b;
+}
+
+### 🔹 Calling a Method
+- Writing a method is not enough — you must **call it**.  
+- To call, you need an **object** of the class (unless the method is `static`).  
+
+class Calculator {
+    public int addNumbers(int a, int b) {
+        return a + b;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Calculator calc = new Calculator(); // create object
+        int result = calc.addNumbers(5, 10); // call method
+        System.out.println("Result: " + result);
+    }
+}
+
+### 🔹 Class and Object Syntax
+
+ClassName objectName = new ClassName();
+objectName.methodName();
+```
+
+### ✅ Day 19 Summary
+- Methods = reusable code blocks.  
+- Syntax: `returnType methodName(parameters) {}`.  
+- Call methods using objects.  
+- Return types can be primitive, non-primitive, or objects.  
