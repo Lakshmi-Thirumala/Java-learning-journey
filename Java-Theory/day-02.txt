@@ -1,4 +1,4 @@
-Day Two: Compiler, Interpreter, and Java History 
+Day 2: Compiler, Interpreter, and Java History 
 
 Compiler and Interpreter in Java
 Java uses both a compiler and the JVM (interpreter + JIT compiler).
