@@ -39,6 +39,3 @@
 
     Error:  
     Main method not found in class Test
-This keeps your documentation clear, structured, and GitHub‑ready.  
-
-Would you like me to prepare a **Day 5 template** so you can continue documenting variables, data types, and operators in the same style?
