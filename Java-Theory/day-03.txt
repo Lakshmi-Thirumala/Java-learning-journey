@@ -1,4 +1,4 @@
-### Day Three: Features of Java 
+### Day 3: Features of Java 
 
 - **Platform Independent**  
   - `.java` source code is compiled into `.class` bytecode.  
