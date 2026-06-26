@@ -1,0 +1,36 @@
+## 🔹 Stack Memory
+- Stores **local variables**, **method calls**, and **thread-specific data**.  
+- Each thread has its own stack.  
+- Operates in a **Last In, First Out (LIFO)** manner — the most recent method call is the first to finish.  
+
+## 🔹 Temporary Nature
+- Yes, stack memory is **temporary**, similar to RAM.  
+- When a method is called, its local variables and execution context are pushed onto the stack.  
+- When the method finishes, that stack frame is popped off — memory is released immediately.  
+- When the program ends, the entire stack memory is cleared.
+
+## 🔹 Example
+
+public class StackExample {
+    public static void main(String[] args) {
+        int x = 10;          // stored in stack
+        int y = calculate(x); // method call pushes new frame
+        System.out.println(y);
+    }
+
+    static int calculate(int num) {
+        int result = num * 2; // local variable in stack
+        return result;        // frame removed after return
+    }
+}
+
+
+👉 Here:
+- `x` and `y` are stored in stack memory.  
+- When `calculate()` is called, a new stack frame is created.  
+- After returning, that frame is removed.  
+
+## 🔹 Key Takeaway
+- Stack memory is **temporary** and tied to method execution.  
+- It’s cleared automatically when methods finish or when the program ends.  
+- Unlike **heap memory** (used for objects), stack memory is short-lived and managed automatically.  
