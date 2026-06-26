@@ -103,3 +103,43 @@ objectName.methodName();
 - Call methods using objects.  
 - Return types can be primitive, non-primitive, or objects. 
 
+***********************************************************************************************
+## 🔹 Methods for Reusable Code
+Instead of writing the same logic multiple times, you write it once inside a method and then **call it with different arguments**.
+
+### Example
+
+class Calculator {
+    // Instance method
+    int addNumbers(int a, int b) {
+        return a + b;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Calculator calc = new Calculator();
+
+        // Reusing the same method with different values
+        System.out.println("Sum 1: " + calc.addNumbers(5, 10));
+        System.out.println("Sum 2: " + calc.addNumbers(20, 30));
+        System.out.println("Sum 3: " + calc.addNumbers(100, 200));
+    }
+}
+
+👉 Output:
+Sum 1: 15
+Sum 2: 50
+Sum 3: 300
+
+
+## 🔹 Why This Matters
+- **Reusable logic** → write once, use many times.  
+- **Different inputs** → same method works for multiple cases.  
+- **Cleaner code** → avoids duplication and makes maintenance easier.  
+
+## 🔹 Key Takeaway
+- Methods are **reusable code blocks**.  
+- You can pass **different values (parameters)** each time you call them.  
+
+
