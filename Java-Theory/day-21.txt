@@ -1,6 +1,4 @@
-
-This is a fantastic exercise you’ve built — you’re essentially benchmarking **different loop strategies** for prime number checking. Each of your `primeCheckX` methods shows how loop boundaries and conditions affect both correctness and efficiency. Let’s break it down:
-
+day 21 : optimize loops
 ---
 
 ## 🔹 What Your Program Demonstrates
@@ -17,25 +15,3 @@ This is a fantastic exercise you’ve built — you’re essentially benchmarkin
 - Each method progressively **reduces the number of iterations**.  
 - You’re measuring execution time with `System.currentTimeMillis()`, so you can see the performance difference.  
 - For small numbers, all methods will seem fast. For large numbers (like millions), the optimized versions (`primeCheckFive` and `primeCheckSix`) will be dramatically faster.
-
----
-
-## 🔹 Example Run
-If you enter `97`:
-- `primeCheckOne` → loops 97 times.  
-- `primeCheckFive` → loops only up to `√97 ≈ 9`.  
-- `primeCheckSix` → even fewer checks, since it skips even numbers.  
-
-👉 The output will show “Prime Number” each time, but the **time difference** will highlight efficiency.
-
----
-
-## 🔹 Key Takeaway
-- **Brute force** methods are simple but slow.  
-- **Optimized loops** (using `num/2` or `√num`) save huge amounts of computation.  
-- Adding **shortcuts** (like checking divisibility by 2 first) makes it even more efficient.  
-- This is a perfect demonstration of how **loop design impacts performance**.
-
----
-
-Would you like me to also show you a **side-by-side table** comparing the number of iterations each method performs for a large input (say `num = 1,000,000`), so you can clearly see how the efficiency improves step by step?
