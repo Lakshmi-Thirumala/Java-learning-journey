@@ -1,5 +1,17 @@
 Day 2: Compiler, Interpreter, and Java History 
 
+## 🔹 Compiler
+- Translates the **entire source code** into machine code **at once**.  
+- Example languages: **C, C++**, **Java** (Java compiles to bytecode first).  
+
+## 🔹 Interpreter
+- Translates and executes **line by line**.  
+- Example languages: **Python**, **JavaScript**, **Ruby**.  
+
+## ✅ Takeaway
+- **Compiler** → “Translate everything first, then run.”  
+- **Interpreter** → “Translate and run step by step.”  
+
 Compiler and Interpreter in Java
 Java uses both a compiler and the JVM (interpreter + JIT compiler).
 
