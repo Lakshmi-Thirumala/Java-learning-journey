@@ -8,11 +8,10 @@
 - **Strongly Typed Language**  
   - Every variable must have a declared data type.  
   - Type checking happens during compilation.  
-  - Example:  
-    ```java
+  - Example:
+
     int age = 25;
     String name = "Lakshmi";
-    ```
 
 - **Robust**  
   - Provides exception handling (`try-catch-finally`).  
