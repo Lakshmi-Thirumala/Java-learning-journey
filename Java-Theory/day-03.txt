@@ -23,6 +23,7 @@
 
 - **Object-Oriented Programming**  
   - Supports  encapsulation, inheritance, polymorphism, and abstraction.
+  -Java’s object-oriented features naturally promote loose coupling.
 
 - **Backward Compatibility**  
   - Old Java programs usually continue to work on newer versions.  
