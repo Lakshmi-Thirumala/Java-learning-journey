@@ -19,3 +19,4 @@
   }
 
 - ⚠️ Not used much in real-time unless working with matrices, patterns, or nested data.
+practise pattern problems (for Freshers)
