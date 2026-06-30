@@ -1,4 +1,4 @@
-﻿### Day One: Introduction to Programming
+﻿### Day 1: Introduction to Programming
 
 - **What is Programming?**  
   Programming is the process of giving a computer a set of instructions to perform specific tasks.
