@@ -1,5 +1,6 @@
 ### Day 9: Operators in Java 
 
+ operators are special symbols that perform operations on variables and values.
 - **Arithmetic Operators**  
   - `+` → Addition  
   - `-` → Subtraction  
