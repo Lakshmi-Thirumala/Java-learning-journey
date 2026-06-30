@@ -1,5 +1,5 @@
 ## 📘 Day 15: Loops in Java
-
+loops are control structures that let you execute a block of code repeatedly until a condition is met
 ### 🔹 For Loop
 - Used when we know **exactly how many iterations** we want (fixed count).  
 - Syntax:
