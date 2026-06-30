@@ -22,7 +22,7 @@
   - No need for manual memory management.
 
 - **Object-Oriented Programming**  
-  - Based on encapsulation, inheritance, polymorphism, and abstraction.
+  - Supports  encapsulation, inheritance, polymorphism, and abstraction.
 
 - **Backward Compatibility**  
   - Old Java programs usually continue to work on newer versions.  
