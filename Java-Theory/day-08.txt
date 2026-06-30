@@ -53,7 +53,9 @@
 ### Default Values vs Local Variables
 - **Instance/Static Variables:**  
   - Automatically assigned default values.  
-  - Examples:  
+  - Examples: 
+    -byte → 0
+    -short → 0
     - `int` → 0  
     - `long` → 0L  
     - `float` → 0.0f  
