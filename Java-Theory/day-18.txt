@@ -1,4 +1,4 @@
-## 📘 Day 17:  Break, Continue, Labels
+## 📘 Day 18:  Break, Continue, Labels(Jump statements)
 
 ### 🔹 Break in Loops
 - Exits the **current loop** immediately when condition is met.  
