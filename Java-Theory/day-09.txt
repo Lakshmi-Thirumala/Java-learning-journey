@@ -65,6 +65,3 @@
 - `+` is used for both addition and string concatenation.  
 - Parentheses `()` control evaluation order.  
 
-
-
-Would you like me to prepare a **Day 10 template** so you can continue with relational and logical operators in the same structured style?
