@@ -15,8 +15,8 @@
   - **Components of JVM:**  
     1. **Class Loader Subsystem**  
        - Loads `.class` files into memory.  
-       - Handles loading, linking, and bytecode verification.  
-    2. **Memory Areas**  
+       - Handles loading, linking, and bytecode verification(This prevents malicious or corrupted code from crashing the JVM).
+2. **Memory Areas**  
        - **Method Area:** Stores class metadata, static variables, runtime constant pool.  
        - **Heap Memory:** Stores objects and instance variables.  
         
