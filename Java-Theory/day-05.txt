@@ -28,7 +28,7 @@
     3. **Execution Engine**  
        - **Interpreter:** Executes bytecode line by line (simpler but slower).  
        - **JIT Compiler:** Converts frequently used bytecode into native machine code for faster performance.  
-    4. **Garbage Collector (GC)**  
+       - **Garbage Collector (GC)**  
        - Automatically removes unused objects from heap memory.  
        - Prevents memory leaks.  
      
