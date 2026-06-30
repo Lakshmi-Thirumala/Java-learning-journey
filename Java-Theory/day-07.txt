@@ -34,17 +34,14 @@
 - **Default Package**  
   - If no package is specified, the class belongs to the default package.  
   - Example:  
-    ```java
+
     public class Test {
     }
-    ```  
+  
   - Limitation: classes in named packages **cannot** import classes from the default package.  
-    ```java
+   
     package com.example;
     import Test;   // ❌ Compilation error
-    ```
-
----
 
 ### ✅ Day 7 Summary
 - IDE simplifies development.  
@@ -58,4 +55,7 @@
     - PascalCase
     - lowercase with hyphens
 - No package declaration → Default Package.  
-- Classes in the default package cannot be imported into named packages.  
+- Classes in the default package cannot be imported into named packages. 
+
+Note :
+In Java, the package declaration is always the first line of a class file (unless you’re using the default package).
