@@ -1,0 +1,82 @@
+Day 22 – Java Typecasting (Summary)
+
+Typecasting
+
+Converting a value from one data type to another.
+
+1. Widening Typecasting (Implicit / Automatic)
+
+Converts smaller data type → larger data type.
+
+No explicit cast is required.
+
+No data loss because the larger type can store all values of the smaller type.
+
+
+byte → short → int → long → float → double
+
+Example:
+
+int i = 100;
+long l = i;
+
+
+---
+
+2. Narrowing Typecasting (Explicit / Manual)
+
+Converts larger data type → smaller data type.
+
+Explicit cast is required.
+
+Data loss is possible if the value is outside the target type's range.
+
+
+Example:
+
+int i = 100;
+byte b = (byte) i;
+
+
+---
+
+Wrap Around (Overflow)
+
+If the value is outside the target type's range, Java wraps it around within that range.
+
+For byte:
+
+Range: -128 to 127
+
+
+Examples:
+
+128  → -128
+129  → -127
+130  → -126
+
+-129 → 127
+-130 → 126
+-131 → 125
+
+Important: Values already within the byte range do not wrap.
+
+Examples:
+
+127  → 127
+-128 → -128
+100  → 100
+
+
+---
+
+Easy Memory Trick
+
+✅ Small → Large = Widening = Automatic = No Data Loss
+
+✅ Large → Small = Narrowing = Explicit = Data Loss Possible
+
+✅ Wrap around happens only when the value goes outside the target type's range.
+
+
+This is a solid Day 22 note for your Java learning journal.
