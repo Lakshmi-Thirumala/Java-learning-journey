@@ -1,0 +1,105 @@
+Day 23 – Java Strings (Summary)
+
+Strings
+
+A String is a sequence of characters used to store text.
+
+Ways to Create Strings
+
+1. String Literal
+
+String s1 = "Frozen";
+String s2 = "Frozen";
+
+Stored in the String Constant Pool (SCP), which is inside the Heap.
+
+If the same string already exists in the SCP, Java reuses the existing object.
+
+This saves memory.
+
+
+Example:
+
+String s1 = "Frozen";
+String s2 = "Frozen";
+
+Both s1 and s2 point to the same object in the SCP.
+
+
+---
+
+2. Using new Keyword
+
+String s3 = new String("Frozen");
+String s4 = new String("Frozen");
+
+Creates a new String object in the Heap every time.
+
+Even if the same value already exists, a new object is created.
+
+Does not reuse existing memory.
+
+
+
+---
+
+String Constant Pool (SCP)
+
+A special memory area inside the Heap.
+
+Stores string literals.
+
+Avoids creating duplicate String objects.
+
+Improves memory efficiency.
+
+
+
+---
+
+Comparing Strings
+
+== Operator
+
+Compares memory references (addresses).
+
+Checks whether both variables point to the same object.
+
+
+Example:
+
+String s1 = "Frozen";
+String s2 = "Frozen";
+
+System.out.println(s1 == s2);   // true
+
+
+---
+
+.equals() Method
+
+Compares the actual content (values) of the strings.
+
+Returns true if both strings have the same text.
+
+
+Example:
+
+String s1 = new String("Frozen");
+String s2 = new String("Frozen");
+
+System.out.println(s1 == s2);        // false
+System.out.println(s1.equals(s2));   // true
+
+
+---
+
+Easy Memory Trick
+
+✅ String Literal → Stored in String Constant Pool → Reuses existing object → Memory efficient
+
+✅ new String() → Creates a new object every time in the Heap
+
+✅ == → Compares memory references
+
+✅ .equals() → Compares string values/content
