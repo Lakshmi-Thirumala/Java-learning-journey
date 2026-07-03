@@ -1,0 +1,36 @@
+It creates **two objects** when you write:  
+
+```java
+String str = new String("Hello");
+```
+
+---
+
+## 🔹 Why Two Objects?
+1. **String Literal `"Hello"`**  
+   - Stored in the **String Constant Pool (SCP)**.  
+   - If `"Hello"` already exists in the pool, Java reuses it.  
+   - If not, a new literal object is created in the pool.  
+
+2. **New String Object in Heap**  
+   - The `new String("Hello")` constructor forces creation of a **separate object in the heap**, even though the literal already exists in the pool.  
+   - This heap object internally references the `"Hello"` literal.  
+
+---
+
+## 🔹 Example
+```java
+String s1 = "Hello";              // 1 object in SCP
+String s2 = new String("Hello");  // 1 in SCP (if not already) + 1 in Heap
+```
+
+👉 Here:
+- `s1` → points to the SCP object.  
+- `s2` → points to a **different heap object**, though both contain `"Hello"`.  
+
+---
+
+## 🔹 Key Takeaway
+- `new String()` → **1 object** (empty string in heap).  
+- `new String("Hello")` → **2 objects** (literal in SCP + new heap object).  
+- String literals alone (`"Hello"`) → **1 object in SCP** (reused if already present).  
