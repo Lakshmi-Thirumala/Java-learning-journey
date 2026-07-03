@@ -152,6 +152,5 @@ Easy Memory Trick
 ✅ += works for both numbers (addition) and Strings (concatenation).
 
 
-This is a good point to add to your Day 24 notes.               
-
+discussed reverse of string coding question
                          
