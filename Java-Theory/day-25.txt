@@ -1,0 +1,157 @@
+Day 24 – Java String Methods (Continuation: substring())
+
+substring()
+
+The substring() method is used to extract a part of a string.
+
+1. substring(beginIndex, endIndex)
+
+Returns the substring from beginIndex (inclusive) to endIndex (exclusive).
+
+
+Example:
+
+String str = "hello";
+
+System.out.println(str.substring(1, 4));
+
+Output:
+
+ell
+
+Explanation:
+
+Index 1 → e ✅
+
+Index 2 → l ✅
+
+Index 3 → l ✅
+
+Index 4 (o) is excluded.
+
+
+
+---
+
+2. substring(beginIndex)
+
+Returns the substring from the given index to the end of the string.
+
+
+Example:
+
+String str = "hello";
+
+System.out.println(str.substring(1));
+
+Output:
+
+ello
+
+
+---
+
+Rules
+
+✅ Indices must be 0 to length().
+
+❌ Negative indices are not allowed.
+
+❌ If beginIndex or endIndex is greater than the string length, Java throws StringIndexOutOfBoundsException.
+
+❌ If beginIndex > endIndex, Java throws StringIndexOutOfBoundsException.
+
+
+Examples:
+
+str.substring(-1, 3);   // Exception
+str.substring(1, 10);   // Exception
+str.substring(4, 0);    // Exception
+
+
+---
+
+Easy Memory Trick
+
+✅ substring(start, end) → Start included, End excluded
+
+✅ substring(start) → From start index to the end
+
+❌ Negative index → StringIndexOutOfBoundsException
+
+❌ Index > length() → StringIndexOutOfBoundsException
+
+❌ beginIndex > endIndex → StringIndexOutOfBoundsException
+
+
+Formula to remember:
+
+substring(start, end) = [start, end)
+
+Start is included
+
+End is excluded
+Day 24 – Java String Methods (Continuation: Shorthand Operator)
+
+Shorthand Assignment Operator (+=)
+
+A shorthand assignment operator is used when you perform an operation and store the result back into the same variable.
+
+Instead of writing:
+
+result = result + i;
+
+You can write:
+
+result += i;
+
+Both statements are equivalent.
+
+Example
+
+String result = "";
+int i = 10;
+
+result += i;
+
+System.out.println(result);
+
+Output:
+
+10
+
+Here:
+
+result is a String.
+
+i is an int.
+
+Java automatically converts i to a String and concatenates it.
+
+
+So:
+
+result += i;
+
+is the same as:
+
+result = result + i;
+
+Shorthand operators for arithmetic
+
+a += b;   // a = a + b;
+a -= b;   // a = a - b;
+a *= b;   // a = a * b;
+a /= b;   // a = a / b;
+a %= b;   // a = a % b;
+
+Easy Memory Trick
+
+✅ Use shorthand operators when the result is assigned back to the same variable.
+
+✅ += works for both numbers (addition) and Strings (concatenation).
+
+
+This is a good point to add to your Day 24 notes.               
+
+                         
