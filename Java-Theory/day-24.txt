@@ -1,0 +1,229 @@
+Day 24 – Java String Methods (Final Summary)
+
+Sample Strings
+
+String str = "flmllhlm ";
+String str1 = "media";
+
+1. length()
+
+Returns the total number of characters (including spaces).
+
+
+str.length();
+
+
+---
+
+2. charAt(index)
+
+Returns the character at the specified index.
+
+Valid index: 0 to length() - 1.
+
+If the index is < 0 or >= length(), it throws StringIndexOutOfBoundsException.
+
+
+str.charAt(0);
+
+
+---
+
+3. concat()
+
+Joins two strings.
+
+
+str.concat(str1);
+
+
+---
+
+4. equals()
+
+Compares the values (contents) of two strings.
+
+
+str.equals(str1);
+
+
+---
+
+5. equalsIgnoreCase()
+
+Compares two strings ignoring uppercase/lowercase.
+
+
+str.equalsIgnoreCase(str1);
+
+
+---
+
+6. indexOf()
+
+Returns the first occurrence of a character or substring.
+
+Returns -1 if not found.
+
+
+str.indexOf('l');
+str.indexOf("ll");
+
+
+---
+
+7. lastIndexOf()
+
+Returns the last occurrence of a character or substring.
+
+
+str.lastIndexOf('l');
+
+
+---
+
+8. startsWith()
+
+Checks whether the string starts with the given prefix.
+
+
+str.startsWith("fl");
+
+
+---
+
+9. endsWith()
+
+Checks whether the string ends with the given suffix.
+
+
+str.endsWith("lm");
+
+
+---
+
+10. toLowerCase()
+
+Converts the string to lowercase.
+
+
+str.toLowerCase();
+
+
+---
+
+11. toUpperCase()
+
+Converts the string to uppercase.
+
+
+str.toUpperCase();
+
+
+---
+
+12. trim()
+
+Removes leading and trailing spaces only.
+
+
+str.trim();
+
+
+---
+
+13. isEmpty()
+
+Returns true if the string length is 0.
+
+
+str.isEmpty();
+
+Example:
+
+"".isEmpty();      // true
+"   ".isEmpty();   // false
+
+
+---
+
+14. isBlank()
+
+Returns true if the string is empty or contains only whitespace.
+
+
+str.isBlank();
+
+Example:
+
+"".isBlank();      // true
+"   ".isBlank();   // true
+
+
+---
+
+15. replace()
+
+Replaces all occurrences of a character or substring.
+
+
+str.replace('f', 'h');
+
+
+---
+
+16. replaceFirst()
+
+Replaces only the first occurrence of the given substring.
+
+
+str.replaceFirst("lm", "mm");
+
+
+---
+
+17. contains()
+
+Checks whether the string contains the given character sequence.
+
+Returns true or false.
+
+
+str.contains("gg");
+
+
+---
+
+Quick Revision
+
+✅ length() → Total characters
+
+✅ charAt() → Character at index (0 to length()-1), else StringIndexOutOfBoundsException
+
+✅ concat() → Join strings
+
+✅ equals() → Compare values
+
+✅ equalsIgnoreCase() → Compare ignoring case
+
+✅ indexOf() → First occurrence (-1 if not found)
+
+✅ lastIndexOf() → Last occurrence
+
+✅ startsWith() → Beginning check
+
+✅ endsWith() → Ending check
+
+✅ toUpperCase() / toLowerCase() → Change case
+
+✅ trim() → Remove leading/trailing spaces
+
+✅ isEmpty() → Length is 0
+
+✅ isBlank() → Empty or only whitespace
+
+✅ replace() → Replace all occurrences
+
+✅ replaceFirst() → Replace only the first occurrence
+
+✅ contains() → Check if a substring exists
