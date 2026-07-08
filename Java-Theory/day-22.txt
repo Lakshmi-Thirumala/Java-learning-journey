@@ -77,6 +77,3 @@ Easy Memory Trick
 ✅ Large → Small = Narrowing = Explicit = Data Loss Possible
 
 ✅ Wrap around happens only when the value goes outside the target type's range.
-
-
-This is a solid Day 22 note for your Java learning journal.
