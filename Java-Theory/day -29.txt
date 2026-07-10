@@ -1,0 +1,5 @@
+coding questions -Arrays 
+
+  min element in Array 
+  max element in array 
+  reverse of Array 
