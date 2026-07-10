@@ -4,7 +4,7 @@ Arrays store elements in contiguous memory
 
 Array elements are stored in contiguous (continuous) memory locations.
 
-Because the elements are stored one after another, Java can access any element quickly.
+Because the elements are stored one after another, Jvm can access any element quickly.
 
 
 
