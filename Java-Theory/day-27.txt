@@ -1,0 +1,86 @@
+Day 27 – Java Arrays (Continuation)
+
+Arrays store elements in contiguous memory
+
+Array elements are stored in contiguous (continuous) memory locations.
+
+Because the elements are stored one after another, Java can access any element quickly.
+
+
+
+---
+
+Array Read Operation is Fast
+
+Reading (accessing) an element from an array is very fast because Java can directly calculate its memory location.
+
+Example:
+
+int[] marks = {10, 20, 30, 40, 50};
+
+System.out.println(marks[3]);   // 40
+
+The JVM directly accesses the required index without checking each element one by one.
+
+
+---
+
+Base Address Formula
+
+An array has a base address, which is the memory address of the first element.
+
+To access an element, the JVM conceptually uses:
+
+Address of element = Base Address + (Index × Size of Data Type)
+
+Example:
+
+int[] marks = new int[5];
+
+If:
+
+Base Address = 1000
+
+Size of int = 4 bytes
+
+
+Then:
+
+marks[0] = 1000 + (0 × 4) = 1000
+marks[1] = 1000 + (1 × 4) = 1004
+marks[2] = 1000 + (2 × 4) = 1008
+marks[3] = 1000 + (3 × 4) = 1012
+
+> Note: This formula is a conceptual explanation used for learning. The JVM implementation details are more complex, but this helps explain why array access is efficient.
+
+
+
+
+---
+
+Continuous Memory Allocation
+
+An array is created only if enough contiguous memory is available for all its elements.
+
+If sufficient contiguous memory is not available, the array cannot be allocated.
+
+
+
+---
+
+Quick Revision
+
+✅ Arrays store elements in contiguous (continuous) memory.
+
+✅ Array read/access operation is very fast (constant time, O(1)).
+
+✅ Arrays use a base address to calculate an element's location.
+
+✅ Formula (conceptually):
+
+Address = Base Address + (Index × Size of Data Type)
+
+✅ Arrays require a continuous block of memory to be allocated.
+
+
+This completes your Day 27 notes on the internal working of Java arrays.
