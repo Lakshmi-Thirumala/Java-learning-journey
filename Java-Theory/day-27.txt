@@ -12,7 +12,7 @@ Because the elements are stored one after another, Jvm can access any element qu
 
 Array Read Operation is Fast
 
-Reading (accessing) an element from an array is very fast because Java can directly calculate its memory location.
+Reading (accessing) an element from an array is very fast because Jvm can directly calculate its memory location.
 
 Example:
 
