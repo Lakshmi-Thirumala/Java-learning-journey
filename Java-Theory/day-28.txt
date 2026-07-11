@@ -1,4 +1,4 @@
-String coding questions 
+coding questions :
 
   sum of digits 
   reverse of digits 
