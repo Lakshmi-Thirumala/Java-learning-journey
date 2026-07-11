@@ -1,8 +1,10 @@
 coding questions -Arrays 
 
-  min element in Array 
-  max element in array 
-  reverse of Array 
+  reverse of Array --
+
+approch using J
+approach usinng temp 
+approch using swap
 
 
 These two points are related:
