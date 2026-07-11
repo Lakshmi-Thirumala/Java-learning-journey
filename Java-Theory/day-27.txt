@@ -64,6 +64,11 @@ An array is created only if enough contiguous memory is available for all its el
 
 If sufficient contiguous memory is not available, the array cannot be allocated.
 
+coding Questions
+
+max element in array 
+min element in Array 
+
 
 
 ---
