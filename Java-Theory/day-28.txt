@@ -4,3 +4,14 @@ String coding questions
   reverse of digits 
   palindrome
   amstrong number (not discussed but still)
+
+
+These two points are related:
+Day 26: Explains how much memory is needed.
+Day 27: Explains how that memory is arranged.
+For int[] marks = new int[5]:
+Java needs space for 20 bytes (for the elements).
+Those 20 bytes are allocated as one continuous block of memory (conceptually), allowing fast access using the index.
+So there is no contradiction:
+Day 26: size × data type size → memory required.
+Day 27: That memory is allocated contiguously, enabling fast indexed access
