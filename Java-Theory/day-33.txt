@@ -1,0 +1,238 @@
+Day 33 – Java Arrays (Continuation)
+
+
+1. Printing an Array
+
+
+Instead of printing the array object directly, use the Arrays.toString() method.
+
+
+import java.util.Arrays;
+
+int[] arr = {10, 20, 30};
+
+System.out.println(Arrays.toString(arr));
+
+
+
+Output:
+
+
+[10, 20, 30]
+
+
+
+
+
+Without Arrays.toString(arr), printing an array displays its type and hash code (e.g., [I@15db9742).
+
+
+
+
+
+2. split() Method
+
+
+The split() method splits a string based on a delimiter and returns a String array.
+
+
+Example:
+
+
+String str = "Java Spring Boot";
+
+String[] arr = str.split(" ");
+
+
+
+Output:
+
+
+["Java", "Spring", "Boot"]
+
+
+
+
+3. Enhanced For Loop (For-Each Loop)
+
+
+Used to iterate through all elements of an array without using an index.
+
+
+Syntax:
+
+
+for (String name : arr) {
+    System.out.println(name);
+}
+
+
+
+Example:
+
+
+String[] names = {"Lakshmi", "Ravi", "Anu"};
+
+for (String name : names) {
+    System.out.println(name);
+}
+
+
+
+Advantages
+
+
+
+
+No need to use an index.
+
+
+Simple and readable.
+
+
+Best for reading all elements.
+
+
+
+
+Limitations
+
+
+
+
+Cannot access the index.
+
+
+Cannot iterate in reverse (decrement).
+
+
+Not suitable when you need to modify elements using their index.
+
+
+
+
+
+4. Two-Dimensional (2D) Arrays
+
+
+A 2D array stores data in rows and columns.
+
+
+Declaration:
+
+
+int[][] array = new int[5][5];
+
+
+
+
+
+5 rows
+
+
+5 columns
+
+
+
+
+
+5. Row and Column Length
+
+
+Number of rows:
+
+
+array.length;
+
+
+
+Number of columns:
+
+
+array[0].length;
+
+
+
+Explanation:
+
+
+
+
+array.length → Total number of rows.
+
+
+array[0].length → Number of columns in the first row.
+
+
+
+
+
+6. Jagged Array
+
+
+A Jagged Array is a 2D array where rows have different numbers of columns.
+
+
+Example:
+
+
+int[][] arr = {
+    {1, 2, 3},
+    {4, 5},
+    {6, 7, 8, 9}
+};
+
+
+
+Here:
+
+
+
+
+Row 0 → 3 columns
+
+
+Row 1 → 2 columns
+
+
+Row 2 → 4 columns
+
+
+
+
+Since the column lengths are not equal, it is called a Jagged Array.
+
+
+
+Quick Revision
+
+
+
+
+✅ Arrays.toString(arr) → Prints array contents.
+
+
+✅ split(" ") → Splits a string and returns a String[].
+
+
+✅ Enhanced for loop → Used to read all elements without an index.
+
+
+❌ Enhanced for loop cannot access indices or iterate in reverse.
+
+
+✅ 2D array syntax:
+
+int[][] array = new int[5][5];
+
+
+
+
+
+✅ array.length → Number of rows.
+
+
+✅ array[0].length → Number of columns.
+
+
+✅ Different column sizes in different rows → Jagged Array.
