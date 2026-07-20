@@ -163,3 +163,81 @@ Follow the Single Responsibility Principle (SRP).
 Prefer one class = one responsibility.
 
 Usually, only one class is used as the application's entry point (main()), while other classes handle specific tasks.
+
+
+
+
+Single Responsibility Principle (SRP)
+
+
+A class should have only one job or one responsibility.
+
+
+
+
+A class should focus on one specific task.
+
+
+It should have only one reason to change.
+
+
+This makes the code easier to understand, maintain, test, and reuse.
+
+
+
+
+Example
+
+
+❌ Bad Design
+
+
+class Student {
+    void calculateMarks() { }
+    void saveToDatabase() { }
+    void sendEmail() { }
+}
+
+
+
+The Student class has multiple responsibilities.
+
+
+
+✅ Good Design
+
+
+class Student {
+    // Student data
+}
+
+class MarksCalculator {
+    void calculateMarks() { }
+}
+
+class StudentRepository {
+    void saveToDatabase() { }
+}
+
+class EmailService {
+    void sendEmail() { }
+}
+
+
+
+Now each class has one responsibility.
+
+
+Easy Memory Trick
+
+
+
+
+✅ One Class = One Responsibility = One Reason to Change
+
+
+This is called the Single Responsibility Principle (SRP), which is the 'S' in SOLID principles.
+
+
+
+
