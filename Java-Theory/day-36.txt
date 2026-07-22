@@ -1,0 +1,147 @@
+Day 36– Variables in Java (Static Variables & Local Variables)
+
+1. Static Variables (Class Variables)
+
+A static variable is declared inside a class, outside all methods, and uses the static keyword.
+
+Example
+
+class Student {
+    static String college = "ABC College";
+}
+
+Features
+
+Declared inside the class but outside methods.
+
+Declared using the static keyword.
+
+Stored in the Method Area (Class Area) of JVM memory.
+
+Shared by all objects of the class.
+
+Memory is allocated when the class is loaded.
+
+Gets default values automatically.
+
+It is recommended to access a static variable using the class name.
+
+
+Example:
+
+System.out.println(Student.college);
+
+Shared Nature
+
+If one object changes a static variable:
+
+Student s1 = new Student();
+Student s2 = new Student();
+
+s1.college = "XYZ College";
+
+Then:
+
+System.out.println(s2.college);
+
+Output:
+
+XYZ College
+
+This is because there is only one copy of the static variable, shared by all objects.
+
+
+---
+
+2. Local Variables
+
+A local variable is declared inside a method, constructor, or block.
+
+Example
+
+void display() {
+    int marks = 90;
+}
+
+Here, marks is a local variable.
+
+Features
+
+Declared inside methods, constructors, or blocks.
+
+Stored in the Stack Memory.
+
+Memory is allocated when the method is called.
+
+Destroyed when the method execution finishes.
+
+No default values are assigned.
+
+Must be initialized before use.
+
+Scope is limited to the method/block where it is declared.
+
+
+Example:
+
+void display() {
+    int a;
+    System.out.println(a);   // Compile-time error
+}
+
+This gives an error because local variables must be initialized before use.
+
+Correct:
+
+void display() {
+    int a = 10;
+    System.out.println(a);
+}
+
+
+---
+
+Difference Between Static Variables and Local Variables
+
+Static Variable	Local Variable
+
+Inside class, outside methods	Inside methods, constructors, or blocks
+Uses static keyword	No static keyword
+Stored in Method Area	Stored in Stack
+Memory allocated when class loads	Memory allocated when method is called
+Shared by all objects	Belongs only to the current method
+Has default values	No default values
+Accessible using class name	Accessible only within the method
+
+
+
+---
+
+Quick Revision
+
+✅ Static variable = Inside class + outside methods + static keyword.
+
+✅ Stored in Method Area.
+
+✅ Shared by all objects.
+
+✅ Memory allocated when the class is loaded.
+
+✅ Has default values.
+
+✅ Access using ClassName.variableName.
+
+✅ Local variable = Declared inside a method/constructor/block.
+
+✅ Stored in Stack Memory.
+
+✅ Memory allocated when the method is called.
+
+✅ No default values.
+
+✅ Must be initialized before use.
+
+✅ Scope is limited to the method or block in which it is declared.
+
+
+This is a clean Day 36 summary for your Java notes.
