@@ -1,96 +1,57 @@
 Day 34 – OOP (Object-Oriented Programming) – Summary
-
 Object-Oriented Programming (OOP)
-
 Object-Oriented Programming (OOP) is a programming paradigm that organizes programs using classes and objects.
-
-
 ---
-
 Is Java 100% Object-Oriented?
-
 No. Java is not 100% object-oriented.
 
 Reason:
-
 Java supports primitive data types such as:
 
 int
-
 char
-
 double
-
 float
-
 boolean
-
 byte
-
 short
-
 long
-
-
-
 These are not objects.
-
-
 ---
-
 Wrapper Classes
-
 Java provides Wrapper Classes as object representations of primitive data types.
 
 Examples:
 
-Primitive	Wrapper Class
+Primitive                               	Wrapper Class
 
-int	Integer
-char	Character
-double	Double
-float	Float
-boolean	Boolean
-byte	Byte
-short	Short
-long	Long
-
-
+int	                                          Integer
+char	                                     Character
+double                                   	Double
+float                                   	Float
+boolean                                    	Boolean
+byte                                      	Byte
+short                                    	Short
+long	                                    Long
 So, although Java provides wrapper classes, it still keeps primitive data types.
-
-
 ---
-
 Why are Primitive Types Still Present?
-
 Java supports backward compatibility.
 
 Primitive data types were retained to:
-
 Support older Java code.
-
 Improve performance.
-
 Reduce memory usage.
-
-
 Therefore, Java is not considered 100% object-oriented.
-
-
 ---
-
 Class
-
 A Class is a blueprint, template, or plan for creating objects.
 
 A class defines:
 
 Variables (Fields)
-
 Methods (Behaviors)
-
 Constructors (Used to initialize objects)
-
 
 Example:
 
@@ -106,14 +67,9 @@ class Student {
         System.out.println(name + " " + age);
     }
 }
-
-
 ---
-
 Object
-
 An Object is a real-world entity and an instance of a class.
-
 Objects occupy memory and contain actual values.
 
 Example:
@@ -122,19 +78,13 @@ Student s1 = new Student();
 Student s2 = new Student();
 
 Here,
-
 Student → Class
-
 s1, s2 → Objects (instances)
 
-
-
 ---
-
 One Class – Multiple Implementations
 
 A single class can have multiple objects.
-
 Each object can store different values.
 
 Example:
@@ -148,49 +98,26 @@ s2.name = "Ravi";
 s2.age = 26;
 
 Both objects are created from the same class, but each has different data.
-
-
 ---
 
 Main Method
 
 Technically, every class can have its own main() method.
-
 However, as a coding standard and good design practice:
-
 Follow the Single Responsibility Principle (SRP).
-
 Prefer one class = one responsibility.
-
 Usually, only one class is used as the application's entry point (main()), while other classes handle specific tasks.
 
 
-
-
 Single Responsibility Principle (SRP)
-
-
 A class should have only one job or one responsibility.
-
-
-
-
 A class should focus on one specific task.
-
-
 It should have only one reason to change.
-
-
 This makes the code easier to understand, maintain, test, and reuse.
-
-
-
 
 Example
 
-
 ❌ Bad Design
-
 
 class Student {
     void calculateMarks() { }
@@ -198,14 +125,9 @@ class Student {
     void sendEmail() { }
 }
 
-
-
 The Student class has multiple responsibilities.
 
-
-
 ✅ Good Design
-
 
 class Student {
     // Student data
@@ -223,21 +145,9 @@ class EmailService {
     void sendEmail() { }
 }
 
-
-
 Now each class has one responsibility.
-
 
 Easy Memory Trick
 
-
-
-
 ✅ One Class = One Responsibility = One Reason to Change
-
-
 This is called the Single Responsibility Principle (SRP), which is the 'S' in SOLID principles.
-
-
-
-
