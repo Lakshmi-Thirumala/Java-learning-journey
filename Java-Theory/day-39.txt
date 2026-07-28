@@ -218,3 +218,43 @@ Instance methods	                             Static methods
 Runtime polymorphism	                       Compile-time binding
 Uses object type	                           Uses reference/class type
 Child method overrides parent method                  	Child static method hides parent static method
+
+Main Method 
+
+Exactly — you can technically **define multiple `main` methods** in a Java program (even with different parameter lists, i.e., method overloading), but the **JVM only looks for one specific signature** when starting execution:
+
+```java
+public static void main(String[] args)
+```
+
+---
+
+## 🔹 Why JVM Looks for This Signature
+- **`public`** → accessible to JVM from outside the class.  
+- **`static`** → no object creation needed; JVM can call it directly.  
+- **`void`** → doesn’t return anything to JVM.  
+- **`String[] args`** → allows command-line arguments to be passed.  
+
+---
+
+## 🔹 Multiple `main` Methods
+You can overload `main` like this:
+
+```java
+public class Test {
+    public static void main(String[] args) {
+        System.out.println("Main with String[] args");
+    }
+
+    public static void main(int[] nums) {
+        System.out.println("Main with int[]");
+    }
+
+    public static void main(String arg) {
+        System.out.println("Main with single String");
+    }
+}
+```
+
+👉 But when you run the program, **only `main(String[] args)` is executed by JVM**.  
+The other versions are just normal methods — you can call them manually from inside the real `main`.
