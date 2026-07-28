@@ -1,1 +1,281 @@
-polymorphism
+
+Day 39 – Polymorphism (Complete Summary)
+
+Polymorphism
+
+Polymorphism means "Many Forms."
+
+The same method can perform different actions depending on how it is used.
+
+There are two types of polymorphism:
+
+1. Compile-Time Polymorphism (Method Overloading)
+
+
+2. Run-Time Polymorphism (Method Overriding)
+
+
+
+
+---
+
+1. Compile-Time Polymorphism (Method Overloading)
+
+Method overloading means having multiple methods with the same name in the same class, but with different parameter lists.
+
+Real-Time Example – TV Remote
+
+Suppose your TV remote has a Volume button.
+
+Sometimes you increase the volume by 1:
+
+increaseVolume();
+
+Sometimes you want to increase it by 5:
+
+increaseVolume(5);
+
+The operation is the same (increase volume), but the way you call it is different. This is method overloading.
+
+
+---
+
+Rules for Method Overloading
+
+A class can have methods with the same name if they differ by:
+
+✅ Different number of parameters.
+
+✅ Different data types of parameters.
+
+✅ Different order of parameter data types.
+
+
+Example:
+
+class Calculator {
+
+    void add(int a, int b) { }
+
+    void add(int a, int b, int c) { }
+
+    void add(double a, double b) { }
+
+    void add(int a, double b) { }
+
+    void add(double a, int b) { }
+}
+
+Return Type
+
+✅ You can have different return types only if the parameter list is also different.
+
+Features of Method Overloading
+
+Same class.
+
+Same method name.
+
+Different parameter list.
+
+No inheritance required.
+
+Decided at compile time.
+
+
+
+---
+
+2. Run-Time Polymorphism (Method Overriding)
+
+Method overriding means the child class provides its own implementation of a method already present in the parent class.
+
+It is used when we want to change the implementation of a parent class method in the child class.
+
+
+---
+
+Real-Time Example – Grandfather's Land
+
+Imagine:
+
+Grandfather has 10 acres of land.
+
+He uses 1 acre for farming and sells the remaining 9 acres.
+
+Father inherits that 1 acre and uses it as a shed.
+
+Child inherits the same land but uses half an acre for a business and half an acre for a house.
+
+
+The property is the same, but each generation uses it differently.
+
+Similarly, in Java:
+
+The parent class provides a method.
+
+The child class changes its implementation according to its own requirement.
+
+
+This is called method overriding.
+
+
+---
+
+Rules for Method Overriding
+
+✅ Inheritance is required.
+
+✅ Same method name.
+
+✅ Same parameter list.
+
+✅ Same return type (or a covariant return type).
+
+✅ Child class provides a different implementation.
+
+
+Example:
+
+class Animal {
+
+    void sound() {
+        System.out.println("Animal Sound");
+    }
+}
+
+class Dog extends Animal {
+
+    @Override
+    void sound() {
+        System.out.println("Dog Barks");
+    }
+}
+
+
+---
+
+Can Static Methods Be Overridden?
+
+❌ No.
+
+Static methods belong to the class, not to an object.
+
+They are resolved at compile time, so they cannot be overridden.
+
+Instead, they are hidden.
+
+
+---
+
+Method Hiding
+
+Method hiding occurs when a child class declares a static method with the same signature as a static method in the parent class.
+
+Example:
+
+class Parent {
+
+    static void display() {
+        System.out.println("Parent");
+    }
+}
+
+class Child extends Parent {
+
+    static void display() {
+        System.out.println("Child");
+    }
+}
+
+Here:
+
+Child.display() hides Parent.display().
+
+This is method hiding, not overriding.
+
+
+
+---
+
+Method Overloading vs Method Overriding
+
+Method Overloading	Method Overriding
+
+Same class	Parent and child classes
+Inheritance not required	Inheritance required
+Same method name	Same method name
+Different parameter list	Same parameter list
+Return type can differ only if parameters differ	Same (or covariant) return type
+Compile-time polymorphism	Runtime polymorphism
+
+
+
+---
+
+Method Overriding vs Method Hiding
+
+Method Overriding	Method Hiding
+
+Instance methods	Static methods
+Runtime polymorphism	Compile-time binding
+Uses object type	Uses reference/class type
+Child method overrides parent method	Child static method hides parent static method
+
+
+
+---
+
+Quick Revision
+
+✅ Polymorphism = Many Forms.
+
+✅ Types:
+
+Compile-Time Polymorphism
+
+Run-Time Polymorphism
+
+
+✅ Method Overloading:
+
+Same class.
+
+Same method name.
+
+Different parameter list.
+
+TV remote example (increase volume by 1 or by a specific number).
+
+
+✅ Return type may differ only if the parameter list is also different.
+
+❌ Changing only the return type is not overloading.
+
+✅ Method Overriding:
+
+Requires inheritance.
+
+Same method name.
+
+Same parameter list.
+
+Same (or covariant) return type.
+
+Child class changes the parent's implementation.
+
+
+✅ Grandfather → Father → Child land usage is a good analogy for changing the implementation while inheriting the same method.
+
+❌ Static methods cannot be overridden.
+
+✅ Static methods are hidden (method hiding).
+
+
+Easy Memory Trick
+
+Overloading → Same Class + Different Parameters + Compile Time
+
+Overriding → Inheritance + Same Signature + Runtime
+
+Method Hiding → Static Methods + Compile Time
