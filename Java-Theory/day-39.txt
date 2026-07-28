@@ -1,7 +1,4 @@
-
 Day 39 – Polymorphism (Complete Summary)
-
-Polymorphism
 
 Polymorphism means "Many Forms."
 
@@ -130,7 +127,7 @@ Rules for Method Overriding
 
 ✅ Same parameter list.
 
-✅ Same return type (or a covariant return type).
+✅ Same return type
 
 ✅ Child class provides a different implementation.
 
@@ -200,14 +197,14 @@ This is method hiding, not overriding.
 
 Method Overloading vs Method Overriding
 
-Method Overloading	Method Overriding
+Method Overloading	                                       Method Overriding
 
-Same class	Parent and child classes
-Inheritance not required	Inheritance required
-Same method name	Same method name
-Different parameter list	Same parameter list
-Return type can differ only if parameters differ	Same (or covariant) return type
-Compile-time polymorphism	Runtime polymorphism
+Same class	                                                  Parent and child classes
+Inheritance not required                                      	Inheritance required
+Same method name	                                            Same method name
+Different parameter list	                                          Same parameter list
+Return type can differ only if parameters differ            	Same return type
+Compile-time polymorphism                               	Runtime polymorphism
 
 
 
@@ -217,65 +214,7 @@ Method Overriding vs Method Hiding
 
 Method Overriding	Method Hiding
 
-Instance methods	Static methods
-Runtime polymorphism	Compile-time binding
-Uses object type	Uses reference/class type
-Child method overrides parent method	Child static method hides parent static method
-
-
-
----
-
-Quick Revision
-
-✅ Polymorphism = Many Forms.
-
-✅ Types:
-
-Compile-Time Polymorphism
-
-Run-Time Polymorphism
-
-
-✅ Method Overloading:
-
-Same class.
-
-Same method name.
-
-Different parameter list.
-
-TV remote example (increase volume by 1 or by a specific number).
-
-
-✅ Return type may differ only if the parameter list is also different.
-
-❌ Changing only the return type is not overloading.
-
-✅ Method Overriding:
-
-Requires inheritance.
-
-Same method name.
-
-Same parameter list.
-
-Same (or covariant) return type.
-
-Child class changes the parent's implementation.
-
-
-✅ Grandfather → Father → Child land usage is a good analogy for changing the implementation while inheriting the same method.
-
-❌ Static methods cannot be overridden.
-
-✅ Static methods are hidden (method hiding).
-
-
-Easy Memory Trick
-
-Overloading → Same Class + Different Parameters + Compile Time
-
-Overriding → Inheritance + Same Signature + Runtime
-
-Method Hiding → Static Methods + Compile Time
+Instance methods	                             Static methods
+Runtime polymorphism	                       Compile-time binding
+Uses object type	                           Uses reference/class type
+Child method overrides parent method                  	Child static method hides parent static method
