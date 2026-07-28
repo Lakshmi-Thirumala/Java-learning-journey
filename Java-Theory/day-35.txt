@@ -1,19 +1,11 @@
 Day 35– Constructors (Summary)
 
 Constructor
-
 A constructor is a special member of a class that is used to initialize objects.
-
 It has the same name as the class.
-
 It does not have a return type (not even void).
-
 It is called automatically when an object is created.
-
-
-
 ---
-
 Object Creation Syntax
 
 ClassName objectName = new ClassName();
@@ -21,14 +13,10 @@ ClassName objectName = new ClassName();
 Example:
 
 Student s1 = new Student();
-
 Here, Student() is the constructor.
-
-
 ---
 
 Default Constructor
-
 If you do not write any constructor, the JVM/compiler provides a default constructor (also called a no-argument/unparameterized constructor).
 
 Example:
@@ -37,17 +25,12 @@ class Student {
 }
 
 The compiler provides:
-
 Student() {
 }
-
 automatically.
-
-
 ---
 
 Parameterized Constructor
-
 A constructor that accepts parameters is called a parameterized constructor.
 
 Example:
@@ -64,16 +47,10 @@ class Student {
 Object creation:
 
 Student s1 = new Student("Lakshmi");
-
 This initializes the object in a single step.
-
-
 ---
-
 Important Rule
-
 If you write any constructor (for example, a parameterized constructor), the compiler does not generate the default constructor.
-
 So if you need both:
 
 Student() {
@@ -82,31 +59,22 @@ Student() {
 Student(String name) {
     this.name = name;
 }
-
 you must write the no-argument constructor yourself.
-
-
 ---
 
 Constructor Overloading
-
 A class can have multiple constructors.
-
 This is called constructor overloading.
 
 Rules:
-
 ✅ Number of parameters should be different.
-
 
 Student()
 Student(int id)
 Student(int id, String name)
 
 OR
-
 ✅ If the number of parameters is the same, their data types or order must be different.
-
 
 Example:
 
@@ -163,15 +131,10 @@ This makes the code cleaner and avoids forgetting to initialize fields.
 ---
 
 Instance Variables
-
 Instance variables are variables that:
-
 Are declared inside the class.
-
 Are declared outside methods, constructors, and blocks.
-
 Belong to each object.
-
 
 Example:
 
@@ -184,50 +147,10 @@ class Student {
 Here, name and age are instance variables.
 
 Features
-
 They receive default values if not initialized.
-
 int → 0
-
 double → 0.0
-
 boolean → false
-
 Object reference → null
-
-
 Memory for instance variables is allocated when an object is created.
-
-
-
----
-
-Quick Revision
-
-✅ Constructor = Special member used to initialize objects.
-
-✅ Constructor name must be the same as the class name.
-
-✅ Constructors have no return type.
-
-✅ new ClassName() calls a constructor.
-
-✅ If no constructor is written, the compiler provides a default (no-argument) constructor.
-
-✅ If any constructor is written, the compiler does not provide the default constructor.
-
-✅ Multiple constructors are allowed (constructor overloading).
-
-✅ Overloading rules:
-
-Different number of parameters, or
-
-Same number but different parameter types/order.
-
-
-✅ Parameterized constructors initialize objects at creation time.
-
-✅ Instance variables are declared inside the class but outside methods.
-
-✅ Instance variables get default values and memory is allocated when an object is created.
 
