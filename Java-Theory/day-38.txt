@@ -1,0 +1,562 @@
+Day 38– OOP (Inheritance, this & super) – Complete Summary
+
+
+Inheritance
+
+
+Inheritance is the process of acquiring the properties (variables) and behaviors (methods) of a parent class into a child class.
+
+
+Advantages
+
+
+
+
+Code reusability
+
+
+Reduces code duplication
+
+
+Supports method overriding
+
+
+Establishes an "IS-A" relationship
+
+
+
+
+Keyword
+
+
+extends
+
+
+
+Example:
+
+
+class Animal {
+}
+
+class Dog extends Animal {
+}
+
+
+
+
+Types of Inheritance
+
+
+1. Single Inheritance
+
+
+One child class extends one parent class.
+
+
+A
+|
+B
+
+
+
+
+2. Multilevel Inheritance
+
+
+A child class extends a parent class, and that parent class extends another class.
+
+
+A
+|
+B
+|
+C
+
+
+
+
+3. Hierarchical Inheritance
+
+
+Two or more child classes extend one parent class.
+
+
+    A
+   / \
+  B   C
+
+
+
+
+4. Multiple Inheritance
+
+
+One child class extends two parent classes.
+
+
+A      B
+ \    /
+   C
+
+
+
+❌ Not supported with classes in Java.
+
+
+Reason:
+The JVM faces ambiguity (Diamond Problem) because it cannot decide which parent's method to call when both parent classes contain the same method.
+
+
+
+
+Note: Java supports multiple inheritance through interfaces, not through classes.
+
+
+
+
+
+5. Hybrid Inheritance
+
+
+Hybrid inheritance is a combination of multiple inheritance and any other inheritance type (single, multilevel, or hierarchical).
+
+
+❌ Not supported with classes because it includes multiple inheritance.
+
+
+
+this Keyword
+
+
+The this keyword refers to the current class object's reference.
+
+
+Uses of this
+
+
+
+
+Refers to the current object's instance variables.
+
+
+Calls current class methods.
+
+
+Resolves ambiguity between instance variables and local variables/constructor parameters with the same name.
+
+
+Used for constructor chaining using this().
+
+
+
+
+Example
+
+
+class Student {
+
+    String name;
+
+    Student(String name) {
+        this.name = name;
+    }
+}
+
+
+
+Here:
+
+
+
+
+this.name → Instance variable.
+
+
+name → Constructor parameter (local variable).
+
+
+
+
+
+this() - Constructor Chaining
+
+
+this() is used to call another constructor in the same class.
+
+
+Example:
+
+
+class Student {
+
+    Student() {
+        this(10);
+    }
+
+    Student(int id) {
+        System.out.println(id);
+    }
+}
+
+
+
+Rules
+
+
+
+
+Used only inside constructors.
+
+
+Calls another constructor of the same class.
+
+
+Only one this() is allowed in a constructor.
+
+
+Different constructors can each have one this().
+
+
+In Java 21 and earlier, this() must be the first statement.
+
+
+From Java 22 (Preview feature), Java introduced Flexible Constructor Bodies, allowing limited statements before this() under specific rules.
+
+
+
+
+
+this in Static Methods
+
+
+❌ this cannot be used inside static methods.
+
+
+Reason:
+
+
+
+
+Static methods belong to the class.
+
+
+They are loaded when the class is loaded.
+
+
+Objects are created later at runtime.
+
+
+Since this refers to the current object, it cannot be used in a static context.
+
+
+
+
+
+super Keyword
+
+
+The super keyword refers to the parent class object's reference.
+
+
+It can be used only when inheritance exists.
+
+
+Uses of super
+
+
+
+
+Access parent class variables.
+
+
+Access parent class methods.
+
+
+Call the parent class constructor using super().
+
+
+
+
+
+Access Parent Class Variable
+
+
+class Animal {
+    String name = "Animal";
+}
+
+class Dog extends Animal {
+
+    String name = "Dog";
+
+    void display() {
+        System.out.println(super.name);
+        System.out.println(this.name);
+    }
+}
+
+
+
+
+
+super.name → Parent class variable.
+
+
+this.name → Child class variable.
+
+
+
+
+
+Access Parent Class Method
+
+
+class Animal {
+
+    void sound() {
+        System.out.println("Animal Sound");
+    }
+}
+
+class Dog extends Animal {
+
+    void sound() {
+        System.out.println("Dog Barks");
+    }
+
+    void display() {
+        super.sound();
+        this.sound();
+    }
+}
+
+
+
+
+
+super.sound() → Parent class method.
+
+
+this.sound() → Child class method.
+
+
+
+
+
+super() - Constructor Chaining
+
+
+super() calls the parent class constructor.
+
+
+Example:
+
+
+class Animal {
+
+    Animal() {
+        System.out.println("Animal Constructor");
+    }
+}
+
+class Dog extends Animal {
+
+    Dog() {
+        super();
+        System.out.println("Dog Constructor");
+    }
+}
+
+
+
+
+Constructor Chaining
+
+
+Constructor chaining means calling one constructor from another constructor.
+
+
+There are two ways:
+
+
+1. this()
+
+
+
+
+Calls another constructor within the same class.
+
+
+
+
+2. super()
+
+
+
+
+Calls the constructor of the parent class.
+
+
+
+
+Rules
+
+
+
+
+✅ this() → Constructor chaining in the same class.
+
+
+✅ super() → Constructor chaining between child and parent class.
+
+
+✅ Both are used for constructor chaining.
+
+
+✅ Only one of them can be used in a constructor.
+
+
+✅ In Java 21 and earlier, they must be the first statement in the constructor.
+
+
+
+
+
+Automatic super() Call
+
+
+Whenever you create a child class object, the parent class constructor executes first.
+
+
+If you do not explicitly write super(), the compiler automatically inserts it as the first statement.
+
+
+Example:
+
+
+class Dog extends Animal {
+
+    Dog() {
+        System.out.println("Dog Constructor");
+    }
+}
+
+
+
+Internally:
+
+
+class Dog extends Animal {
+
+    Dog() {
+        super();
+        System.out.println("Dog Constructor");
+    }
+}
+
+
+
+Output:
+
+
+Animal Constructor
+Dog Constructor
+
+
+
+
+
+Interview Point: A separate parent object is not created. The parent part of the child object is initialized first, followed by the child part.
+
+
+
+
+
+this vs super
+
+
+
+
+this
+super
+
+
+
+
+Refers to the current class object's reference
+Refers to the parent class object's reference
+
+
+Accesses current class variables and methods
+Accesses parent class variables and methods
+
+
+this() calls another constructor in the same class
+super() calls the parent class constructor
+
+
+Used for constructor chaining within the same class
+Used for constructor chaining between child and parent
+
+
+
+
+
+Quick Revision
+
+
+
+
+✅ Inheritance = Acquiring parent class properties and methods.
+
+
+✅ Keyword: extends.
+
+
+✅ Types: Single, Multilevel, Hierarchical, Multiple (❌ classes), Hybrid (❌ classes).
+
+
+✅ Multiple inheritance is not supported because of ambiguity (Diamond Problem).
+
+
+✅ this → Current class object's reference.
+
+
+✅ Resolves ambiguity between instance variables and local variables.
+
+
+✅ this() → Calls another constructor in the same class.
+
+
+✅ this cannot be used in static methods.
+
+
+✅ super → Parent class object's reference.
+
+
+✅ super.variable → Parent variable.
+
+
+✅ super.method() → Parent method.
+
+
+✅ super() → Parent class constructor.
+
+
+✅ Both this() and super() are used for constructor chaining.
+
+
+✅ Only one of them can be used in a constructor.
+
+
+✅ The compiler automatically inserts super() if it is not written explicitly.
+
+
+✅ When a child object is created, the parent constructor executes first, then the child constructor.
+
+
+
+
+This summary includes all the concepts you covered in Day 37, including inheritance types, this, super, constructor chaining, static method restriction, automatic super(), and important interview points.
+
