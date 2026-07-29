@@ -24,7 +24,7 @@ Uses of this
 Refers to the current object's instance variables.
 Calls current class methods.
 Resolves ambiguity between instance variables and local variables/constructor parameters with the same name.
-Used for constructor chaining using this().
+Used for constructor chaining .
 
 Example
 
