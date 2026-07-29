@@ -1,7 +1,10 @@
 Day 38– OOP (Inheritance, this & super) – Complete Summary
 Inheritance
 
-Inheritance is the process of acquiring the properties (variables) and behaviors (methods) of a parent class into a child class.
+5. Hybrid Inheritance
+Hybrid inheritance is a combination of multiple inheritance and any other inheritance type (single, multilevel, or hierarchical).
+❌ Not supported with classes because it includes multiple inheritance.
+
 
 Advantages
 
@@ -11,56 +14,8 @@ Supports method overriding
 Establishes an "IS-A" relationship
 
 Keyword-----------------extends
+
 Example:
-
-class Animal {
-}
-
-class Dog extends Animal {
-}
-
-Types of Inheritance
-
-1. Single Inheritance
-One child class extends one parent class.
-
-A
-|
-B
-
-2. Multilevel Inheritance
-A child class extends a parent class, and that parent class extends another class.
-
-A
-|
-B
-|
-C
-
-3. Hierarchical Inheritance
-Two or more child classes extend one parent class.
-
-    A
-   / \
-  B   C
-
-4. Multiple Inheritance
-One child class extends two parent classes.
-
-A      B
- \    /
-   C
-
-❌ Not supported with classes in Java.
-
-Reason:
-The JVM faces ambiguity (Diamond Problem) because it cannot decide which parent's method to call when both parent classes contain the same method.
-Note: Java supports multiple inheritance through interfaces, not through classes.
-
-5. Hybrid Inheritance
-Hybrid inheritance is a combination of multiple inheritance and any other inheritance type (single, multilevel, or hierarchical).
-❌ Not supported with classes because it includes multiple inheritance.
-
 
 this Keyword
 The this keyword refers to the current class object's reference.
