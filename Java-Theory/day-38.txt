@@ -40,7 +40,6 @@ Here:
 this.name → Instance variable.
 name → Constructor parameter (local variable).
 
-this() - Constructor Chaining
 this() is used to call another constructor in the same class.
 
 Example:
