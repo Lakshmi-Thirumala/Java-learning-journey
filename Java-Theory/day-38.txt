@@ -15,8 +15,7 @@ Establishes an "IS-A" relationship
 
 Keyword-----------------extends
 
-Example:
-
+--------------------------------------------------------------------------------------------------------------
 this Keyword
 The this keyword refers to the current class object's reference.
 
