@@ -33,11 +33,8 @@ Rules for Method Overloading
 A class can have methods with the same name if they differ by:
 
 ✅ Different number of parameters.
-
 ✅ Different data types of parameters.
-
 ✅ Different order of parameter data types.
-
 
 Example:
 
@@ -55,73 +52,45 @@ class Calculator {
 }
 
 Return Type
-
 ✅ You can have different return types only if the parameter list is also different.
 
 Features of Method Overloading
-
 Same class.
-
 Same method name.
-
 Different parameter list.
-
 No inheritance required.
-
 Decided at compile time.
-
-
 
 ---
 
 2. Run-Time Polymorphism (Method Overriding)
 
 Method overriding means the child class provides its own implementation of a method already present in the parent class.
-
 It is used when we want to change the implementation of a parent class method in the child class.
-
-
 ---
 
 Real-Time Example – Grandfather's Land
 
 Imagine:
-
 Grandfather has 10 acres of land.
-
 He uses 1 acre for farming and sells the remaining 9 acres.
-
 Father inherits that 1 acre and uses it as a shed.
-
 Child inherits the same land but uses half an acre for a business and half an acre for a house.
-
-
 The property is the same, but each generation uses it differently.
 
 Similarly, in Java:
-
 The parent class provides a method.
-
 The child class changes its implementation according to its own requirement.
-
-
 This is called method overriding.
-
-
 ---
 
 Rules for Method Overriding
 
 ✅ Inheritance is required.
-
 ✅ Same method name.
-
 ✅ Same parameter list.
-
 ✅ Same return type
-
 ✅ Child class provides a different implementation.
-
 
 Example:
 
@@ -139,27 +108,19 @@ class Dog extends Animal {
         System.out.println("Dog Barks");
     }
 }
-
-
 ---
 
 Can Static Methods Be Overridden?
 
 ❌ No.
-
 Static methods belong to the class, not to an object.
-
 They are resolved at compile time, so they cannot be overridden.
-
 Instead, they are hidden.
-
-
 ---
 
 Method Hiding
 
 Method hiding occurs when a child class declares a static method with the same signature as a static method in the parent class.
-
 Example:
 
 class Parent {
@@ -177,12 +138,8 @@ class Child extends Parent {
 }
 
 Here:
-
 Child.display() hides Parent.display().
-
 This is method hiding, not overriding.
-
-
 
 ---
 
@@ -209,7 +166,7 @@ Instance methods	                             Static methods
 Runtime polymorphism	                       Compile-time binding
 Uses object type	                           Uses reference/class type
 Child method overrides parent method                  	Child static method hides parent static method
-
+---------------------------------------
 Main Method 
 
 Exactly — you can technically **define multiple `main` methods** in a Java program (even with different parameter lists, i.e., method overloading), but the **JVM only looks for one specific signature** when starting execution:
