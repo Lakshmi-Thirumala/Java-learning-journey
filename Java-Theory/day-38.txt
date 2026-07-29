@@ -55,13 +55,15 @@ class Student {
     }
 }
 
-Rules
+Rules for this() chaining :
+
 Used only inside constructors.
 Calls another constructor of the same class.
 Only one this() is allowed in a constructor.
 Different constructors can each have one this().
 In Java 21 and earlier, this() must be the first statement.
-From Java 22 (Preview feature), Java introduced Flexible Constructor Bodies, allowing limited statements before this() under specific rules.
+From Java 22 (Preview feature), Java introduced Flexible Constructor Bodies, allowing limited statements (like variable declarations, logging, or simple checks) before this() under specific rules.
+Java 22 only relaxed the “must be first statement” rule, not the “only one call” rule.
 
 this in Static Methods
 ❌ this cannot be used inside static methods.
