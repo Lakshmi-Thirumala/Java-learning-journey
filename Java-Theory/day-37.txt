@@ -132,3 +132,46 @@ The JVM wouldn't know whether to call display() from B or C. This confusion is c
 Therefore, multiple inheritance is not supported for classes in Java.
 
 Note: Java does support multiple inheritance through interfaces
+
+
+## 🔹 Multiple Inheritance in Java
+- **Multiple inheritance** means a class can inherit from more than one parent class.  
+- The problem: if both parent classes have a method with the same signature, the child class doesn’t know which one to use → **ambiguity**.  
+- That’s exactly like your mom being confused about which laptop to bring when both look the same.  
+
+---
+
+## 🔹 Why Java Avoids It
+- Java **does not support multiple inheritance with classes** to prevent this ambiguity.  
+- Instead, Java uses **interfaces**.  
+
+## 🔹 Scenario (Your Analogy in Code Terms)
+
+- **Two bedrooms** → Two parent classes.  
+- **Two laptops of the same brand** → Both parent classes have a method with the same name/signature.  
+- **You ask your mom to bring “my laptop”** → The child class calls the method.  
+- **Your mom gets confused which laptop to pick** → JVM gets confused which parent’s method to execute.  
+
+---
+
+## 🔹 Example in Java (Why It’s Not Allowed)
+
+class Bedroom1 {
+    void laptop() {
+        System.out.println("Work laptop");
+    }
+}
+
+class Bedroom2 {
+    void laptop() {
+        System.out.println("Personal laptop");
+    }
+}
+
+// ❌ Java does not allow this
+class MyHouse extends Bedroom1, Bedroom2 {
+    // Ambiguity: which laptop() should be inherited?
+}
+```
+
+👉 Just like your mom doesn’t know which identical laptop to bring, the JVM doesn’t know which `laptop()` to call. That’s why **Java forbids multiple inheritance with classes**.
