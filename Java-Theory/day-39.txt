@@ -1,29 +1,20 @@
 Day 39 – Polymorphism (Complete Summary)
 
 Polymorphism means "Many Forms."
-
 The same method can perform different actions depending on how it is used.
 
 There are two types of polymorphism:
 
 1. Compile-Time Polymorphism (Method Overloading)
-
-
 2. Run-Time Polymorphism (Method Overriding)
 
-
-
-
 ---
-
 1. Compile-Time Polymorphism (Method Overloading)
-
 Method overloading means having multiple methods with the same name in the same class, but with different parameter lists.
 
 Real-Time Example – TV Remote
 
 Suppose your TV remote has a Volume button.
-
 Sometimes you increase the volume by 1:
 
 increaseVolume();
