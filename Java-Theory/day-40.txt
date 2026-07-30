@@ -1,1 +1,503 @@
+Day 40 – final Keyword & Access Modifiers (Summary)
+
+
+final Keyword
+
+
+The final keyword is used to restrict modification. It acts like a constant and can be applied to:
+
+
+
+
+Variables
+
+
+Methods
+
+
+Classes
+
+
+
+
+
+1. final Variable
+
+
+A final variable can be assigned only once.
+
+
+Once initialized, its value cannot be changed.
+
+
+Example:
+
+
+final int AGE = 25;
+
+// AGE = 30;   // ❌ Compile-time error
+
+
+
+Points to Remember
+
+
+
+
+✅ A final variable must be assigned a value exactly once.
+
+
+✅ Once assigned, it cannot be updated.
+
+
+✅ If you need to change the value, you must change it where it is initialized.
+
+
+✅ Final variables are commonly used to define constants.
+
+
+
+
+
+2. final Method
+
+
+A final method cannot be overridden by a child class.
+
+
+Example:
+
+
+class Parent {
+
+    final void display() {
+        System.out.println("Parent");
+    }
+}
+
+class Child extends Parent {
+
+    // ❌ Compile-time error
+    void display() {
+    }
+}
+
+
+
+Why?
+
+
+When the parent class implementation should never be changed, declare the method as final.
+
+
+
+3. final Class
+
+
+A final class cannot be inherited.
+
+
+Example:
+
+
+final class Animal {
+}
+
+// ❌ Compile-time error
+class Dog extends Animal {
+}
+
+
+
+Uses
+
+
+
+
+Prevents inheritance.
+
+
+Helps in designing immutable classes.
+
+
+Improves security by preventing modification through inheritance.
+
+
+
+
+Example:
+
+
+String is a final class, which is one reason strings are immutable.
+
+
+
+Access Modifiers
+
+
+Access modifiers control the visibility (scope) of classes, variables, methods, and constructors.
+
+
+There are four access modifiers in Java:
+
+
+
+
+Public
+
+
+Private
+
+
+Protected
+
+
+Default (Package-Private)
+
+
+
+
+
+1. Public
+
+
+Can be used with:
+
+
+
+
+Class
+
+
+Variable
+
+
+Method
+
+
+Constructor
+
+
+
+
+Scope
+
+
+
+
+Accessible from any class in any package.
+
+
+Used when members need to be available throughout the project.
+
+
+
+
+Example:
+
+
+public class Student {
+
+    public void display() {
+    }
+}
+
+
+
+
+2. Private
+
+
+Can be used with:
+
+
+
+
+Variable
+
+
+Method
+
+
+Constructor
+
+
+
+
+
+
+Note: A top-level class cannot be private.
+
+
+
+
+Scope
+
+
+
+
+Accessible only within the same class.
+
+
+
+
+Example:
+
+
+class Student {
+
+    private int age;
+
+    private void display() {
+    }
+}
+
+
+
+
+3. Protected
+
+
+Can be used with:
+
+
+
+
+Variable
+
+
+Method
+
+
+Constructor
+
+
+
+
+
+
+Note: A top-level class cannot be protected.
+
+
+
+
+Scope
+
+
+
+
+Accessible within the same class.
+
+
+Accessible to all classes in the same package.
+
+
+Accessible in other packages only through inheritance (from a child class).
+
+
+
+
+Example:
+
+
+class Parent {
+
+    protected void display() {
+    }
+}
+
+class Child extends Parent {
+
+    void test() {
+        display();
+    }
+}
+
+
+
+
+4. Default (Package-Private)
+
+
+Default access modifier means no access modifier is written.
+
+
+Can be used with:
+
+
+
+
+Class
+
+
+Variable
+
+
+Method
+
+
+Constructor
+
+
+
+
+Example:
+
+
+class Student {
+
+    void display() {
+    }
+}
+
+
+
+Scope
+
+
+
+
+Accessible only within the same package.
+
+
+
+
+
+Public Class Rule
+
+
+In one Java source file:
+
+
+
+
+✅ Only one public class is allowed.
+
+
+✅ Any number of default (package-private) classes can exist.
+
+
+✅ The Java file name must match the public class name.
+
+
+
+
+Example:
+
+
+public class Student {
+}
+
+class Employee {
+}
+
+class Test {
+}
+
+
+
+File name:
+
+
+Student.java
+
+
+
+
+Access Modifier Summary
+
+
+
+
+Access Modifier
+Class
+Variable
+Method
+Constructor
+Scope
+
+
+
+
+Public
+✅
+✅
+✅
+✅
+Anywhere
+
+
+Private
+❌ (Top-level)
+✅
+✅
+✅
+Same class only
+
+
+Protected
+❌ (Top-level)
+✅
+✅
+✅
+Same package + subclasses in other packages
+
+
+Default
+✅
+✅
+✅
+✅
+Same package only
+
+
+
+
+
+Quick Revision
+
+
+final
+
+
+
+
+✅ final variable → Assigned only once.
+
+
+✅ final method → Cannot be overridden.
+
+
+✅ final class → Cannot be inherited.
+
+
+✅ String is a final class.
+
+
+
+
+Access Modifiers
+
+
+
+
+✅ Public → Accessible everywhere.
+
+
+✅ Private → Accessible only within the same class.
+
+
+✅ Protected → Same package + subclasses in other packages.
+
+
+✅ Default → Same package only.
+
+
+✅ Only one public class is allowed per Java file.
+
+
+✅ The file name must match the public class name.
+
+
+
 
