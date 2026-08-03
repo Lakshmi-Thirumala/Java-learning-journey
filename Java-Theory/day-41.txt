@@ -302,6 +302,429 @@ So yes, your understanding is correct: a public variable lets anyone who has acc
 
 Abstraction
 
+Day 42 – Abstraction (Summary)
+
+
+Abstraction
+
+
+Abstraction is the process of hiding implementation details and showing only the essential functionality to the user.
+
+
+The user knows what an object does, but not how it does it.
+
+
+Real-life example:
+
+
+
+
+ATM – You can withdraw money without knowing how the bank processes the transaction.
+
+
+Car – You drive the car without knowing how the engine works.
+
+
+
+
+
+Abstract Class
+
+
+An abstract class is declared using the abstract keyword.
+
+
+It is considered an incomplete class because it can contain abstract methods (methods without implementation).
+
+
+Example:
+
+
+abstract class Animal {
+
+}
+
+
+
+
+Abstract Method
+
+
+An abstract method is a method without a body (implementation).
+
+
+Example:
+
+
+abstract void sound();
+
+
+
+If a class contains at least one abstract method, the class must also be declared abstract.
+
+
+Example:
+
+
+abstract class Animal {
+
+    abstract void sound();
+}
+
+
+
+
+Concrete Method
+
+
+A concrete method is a method with a complete implementation.
+
+
+Example:
+
+
+void eat() {
+    System.out.println("Eating...");
+}
+
+
+
+
+Can an Abstract Class Have Concrete Methods?
+
+
+✅ Yes.
+
+
+An abstract class can contain:
+
+
+
+
+Abstract methods
+
+
+Concrete methods
+
+
+Variables
+
+
+Constructors
+
+
+
+
+Example:
+
+
+abstract class Animal {
+
+    abstract void sound();
+
+    void eat() {
+        System.out.println("Eating...");
+    }
+}
+
+
+
+
+Can a Concrete Class Have an Abstract Method?
+
+
+❌ No.
+
+
+If a class contains an abstract method, the class must be declared abstract.
+
+
+Example:
+
+
+class Animal {
+
+    abstract void sound();   // ❌ Compile-time error
+}
+
+
+
+
+Can an Abstract Class Contain Only Concrete Methods?
+
+
+✅ Yes.
+
+
+Even if a class contains only concrete methods, it can still be declared abstract.
+
+
+Example:
+
+
+abstract class Animal {
+
+    void eat() {
+        System.out.println("Eating...");
+    }
+}
+
+
+
+
+Object Creation
+
+
+❌ We cannot create an object of an abstract class.
+
+
+Example:
+
+
+abstract class Animal {
+}
+
+Animal obj = new Animal();   // ❌ Compile-time error
+
+
+
+Why?
+
+
+An abstract class is incomplete.
+
+
+If object creation were allowed, the JVM would create an object that contains abstract methods with no implementation, so there would be nothing to execute.
+
+
+Therefore, Java does not allow object creation for abstract classes.
+
+
+
+Child Class Responsibility
+
+
+Every concrete child class must implement all abstract methods of the parent class.
+
+
+Example:
+
+
+abstract class Animal {
+
+    abstract void sound();
+}
+
+class Dog extends Animal {
+
+    @Override
+    void sound() {
+        System.out.println("Dog Barks");
+    }
+}
+
+
+
+
+Can Child Class Also Be Abstract?
+
+
+✅ Yes.
+
+
+If the child class does not implement the abstract methods, then the child class must also be declared abstract.
+
+
+Example:
+
+
+abstract class Animal {
+
+    abstract void sound();
+}
+
+abstract class Dog extends Animal {
+
+}
+
+
+
+The next concrete subclass must implement sound().
+
+
+
+Abstract Method Restrictions
+
+
+1. Abstract Method Cannot Be Static
+
+
+❌ Not allowed.
+
+
+Reason:
+
+
+Static methods cannot be overridden, but abstract methods must be overridden by child classes.
+
+
+
+2. Abstract Method Cannot Be Private
+
+
+❌ Not allowed.
+
+
+Reason:
+
+
+Private methods are not visible in child classes, so they cannot be overridden.
+
+
+
+3. Abstract Method Cannot Be Final
+
+
+❌ Not allowed.
+
+
+Reason:
+
+
+A final method cannot be overridden, whereas an abstract method must be overridden.
+
+
+
+Constructors in Abstract Class
+
+
+✅ An abstract class can have constructors.
+
+
+Example:
+
+
+abstract class Animal {
+
+    Animal() {
+        System.out.println("Animal Constructor");
+    }
+}
+
+
+
+Why?
+
+
+Although we cannot create an object of the abstract class directly, its constructor is executed when a child class object is created.
+
+
+Example:
+
+
+abstract class Animal {
+
+    Animal() {
+        System.out.println("Animal Constructor");
+    }
+}
+
+class Dog extends Animal {
+
+    Dog() {
+        System.out.println("Dog Constructor");
+    }
+}
+
+public class Test {
+    public static void main(String[] args) {
+        Dog obj = new Dog();
+    }
+}
+
+
+
+Output:
+
+
+Animal Constructor
+Dog Constructor
+
+
+
+So, constructors in abstract classes are useful because they initialize the abstract class part of a child object.
+
+
+
+Quick Revision
+
+
+
+
+✅ Abstraction = Hiding implementation details and exposing only essential functionality.
+
+
+✅ abstract keyword is used for abstract classes and abstract methods.
+
+
+✅ If a class has an abstract method, the class must be abstract.
+
+
+✅ An abstract method has no implementation.
+
+
+✅ A concrete method has a complete implementation.
+
+
+✅ An abstract class can contain both abstract and concrete methods.
+
+
+❌ A concrete class cannot contain abstract methods.
+
+
+❌ Objects cannot be created for abstract classes.
+
+
+✅ Every concrete child class must implement all inherited abstract methods.
+
+
+✅ A child class can also be abstract if it doesn't implement the abstract methods.
+
+
+❌ An abstract method cannot be static, private, or final.
+
+
+✅ An abstract class can have constructors, and they are executed when a child object is created.
+
+
+
+
+Easy Memory Trick
+
+
+
+
+Abstract class → Incomplete class.
+
+
+Abstract method → No body.
+
+
+Concrete method → Has a body.
+
+
+Concrete child → Must implement abstract methods.
+
+
+Abstract child → Can postpone the implementation.
+
+
+No object → Abstract class cannot be instantiated directly.
+
+
+
+
+
 
   
 
