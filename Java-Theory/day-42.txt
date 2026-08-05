@@ -1,1 +1,357 @@
 Abstarction continuation
+
+Your notes are good. Here's a cleaner, interview-friendly version with a few corrections:
+
+
+
+Abstraction (Continuation) – Interfaces
+
+
+What is an Interface?
+
+
+
+
+An interface is used to achieve 100% abstraction (conceptually).
+
+
+It defines a contract (set of rules) that implementing classes must follow.
+
+
+
+
+Methods in an Interface
+
+
+
+
+Before Java 8:
+
+
+
+All methods are public abstract.
+
+
+No concrete (implemented) methods are allowed.
+
+
+
+
+
+
+Java 8 onwards:
+
+
+
+default and static methods are allowed.
+
+
+
+
+
+
+Java 9 onwards:
+
+
+
+private methods are also allowed inside interfaces.
+
+
+
+
+
+
+
+
+Implementing an Interface
+
+
+
+
+A class uses the implements keyword.
+
+
+The implementing class must override (implement) all abstract methods unless the class itself is abstract.
+
+
+
+
+interface Animal {
+    void sound();
+}
+
+class Dog implements Animal {
+    @Override
+    public void sound() {
+        System.out.println("Bark");
+    }
+}
+
+
+
+Constructors and Objects
+
+
+
+
+Interfaces cannot have constructors because objects of interfaces cannot be created.
+
+
+We cannot create an object of an interface directly.
+
+
+
+
+Variables in an Interface
+
+
+
+
+No instance variables are allowed.
+
+
+Variables are implicitly public static final.
+
+
+They act as constants.
+
+
+
+
+interface Demo {
+    int MAX = 100;   // public static final
+}
+
+
+
+
+Keywords
+
+
+
+
+Class → Class → extends
+
+
+Class → Interface → implements
+
+
+Interface → Interface → extends ✅ (Not implements)
+
+
+
+
+Example:
+
+
+interface A {}
+
+interface B extends A {}
+
+class C implements B {}
+
+
+
+
+Why do we use Interfaces?
+
+
+An interface acts like a set of rules that every implementing class must follow.
+
+
+TRAI Example
+
+
+Suppose TRAI (Telecom Regulatory Authority of India) defines these methods:
+
+
+
+
+call()
+
+
+sms()
+
+
+data()
+
+
+
+
+Every telecom company like Airtel, Jio, and Docomo must implement these methods.
+
+
+Example:
+
+
+
+
+
+
+Docomo
+
+
+
+
+Call: 1 paisa/min
+
+
+Data: 2 GB
+
+
+SMS: 10/day
+
+
+
+
+
+
+
+
+Airtel
+
+
+
+
+Call: ₹1/min
+
+
+Data: 3 GB
+
+
+
+
+
+
+
+
+Jio
+
+
+
+
+Calls: Free
+
+
+Data: 5 GB
+
+
+SMS: 100/day
+
+
+
+
+
+
+
+
+All companies follow the same rules, but each has its own implementation.
+
+
+They can also have their own additional methods:
+
+
+
+
+Jio → OTT subscription
+
+
+Airtel → AI/Perplexity benefits
+
+
+
+
+If TRAI introduces a new rule like rcsSms(), then every implementing class must implement that method (unless it is added as a default method in Java 8+).
+
+
+
+Multiple Inheritance
+
+
+
+
+Not supported with classes.
+
+
+Supported with interfaces.
+
+
+
+
+Reason:
+Interfaces contain only method declarations (or default/static methods), so there is no ambiguity for abstract methods. The child class provides the implementation.
+
+
+interface A {
+    void show();
+}
+
+interface B {
+    void show();
+}
+
+class Test implements A, B {
+    public void show() {
+        System.out.println("Implemented once");
+    }
+}
+
+
+
+
+Hybrid Inheritance
+
+
+
+
+Hybrid inheritance is a combination of multiple inheritance with another inheritance type.
+
+
+In Java, it is possible only using interfaces.
+
+
+
+
+
+Rules for Method Overriding (Access Modifiers)
+
+
+When overriding a method, you cannot reduce visibility.
+
+
+You can increase visibility.
+
+
+Examples:
+
+
+
+
+default → protected ✔
+
+
+protected → public ✔
+
+
+default → public ✔
+
+
+protected → default ❌
+
+
+public → protected ❌
+
+
+
+
+
+Interview One-Liner
+
+
+
+
+An interface is a contract that defines what a class should do, while the implementing class decides how to do it.
+
+
+
+
