@@ -1,1 +1,767 @@
-composition and Aggregation
+composition and Aggregation and wrapper classes 
+
+Day 44 – Has-A Relationship, Wrapper Classes & Employee Arrays
+
+
+1. Has-A Relationship
+
+
+A Has-A relationship means one class contains a reference/object of another class as a variable.
+
+
+Example:
+
+
+class Car {
+    Engine e;
+}
+
+
+
+Here:
+
+
+
+
+Car HAS-A Engine
+
+
+
+
+Has-A relationships are mainly of two types:
+
+
+
+
+Composition
+
+
+Aggregation
+
+
+
+
+
+2. Composition
+
+
+Composition is a strong Has-A relationship.
+
+
+
+
+It represents strong ownership.
+
+
+Classes are tightly coupled.
+
+
+The contained object is strongly associated with the containing object.
+
+
+
+
+Example:
+
+
+class Engine {
+}
+
+class Car {
+    Engine e = new Engine();
+}
+
+
+
+Here, Car has an Engine.
+
+
+Easy way to remember:
+
+
+
+
+Composition = Strong HAS-A / tight coupling
+
+
+
+
+Example: Car → Engine
+
+
+
+3. Aggregation
+
+
+Aggregation is a weak Has-A relationship.
+
+
+
+
+It represents loose coupling.
+
+
+The contained object can exist independently.
+
+
+The lifecycle of the contained object is not necessarily dependent on the container.
+
+
+
+
+Example:
+
+
+class Professor {
+}
+
+class College {
+    Professor professor;
+
+    College(Professor professor) {
+        this.professor = professor;
+    }
+}
+
+
+
+A professor can exist independently of a particular college.
+
+
+Easy way to remember:
+
+
+
+
+Aggregation = Weak HAS-A / loose coupling
+
+
+
+
+Example: College → Professor
+
+
+
+Composition vs Aggregation
+
+
+
+
+Composition
+Aggregation
+
+
+
+
+Strong Has-A
+Weak Has-A
+
+
+Tight coupling
+Loose coupling
+
+
+Strong ownership
+Weak ownership
+
+
+Dependent relationship
+Independent existence possible
+
+
+Car → Engine
+College → Professor
+
+
+
+
+
+4. Wrapper Classes
+
+
+Java is not 100% object-oriented because Java supports primitive data types such as int, char, double, etc.
+
+
+Wrapper classes provide an object representation of primitive data types.
+
+
+Primitive → Wrapper
+
+
+
+
+Primitive
+Wrapper Class
+
+
+
+
+byte
+Byte
+
+
+short
+Short
+
+
+int
+Integer
+
+
+long
+Long
+
+
+float
+Float
+
+
+double
+Double
+
+
+char
+Character
+
+
+boolean
+Boolean
+
+
+
+
+Primitive types still exist even though wrapper classes were introduced because Java maintains backward compatibility.
+
+
+
+5. Why Wrapper Classes?
+
+
+Wrapper classes are particularly important when working with Collections.
+
+
+Collections work with objects, not primitive data types.
+
+
+ArrayList<Integer> numbers = new ArrayList<>();
+
+
+
+We use:
+
+
+Integer
+
+
+
+instead of:
+
+
+int
+
+
+
+Default Value
+
+
+Wrapper/reference types have a default value of:
+
+
+null
+
+
+
+For example, an Integer instance variable that isn't initialized has the default value null.
+
+
+
+6. Wrapper Classes Are in java.lang
+
+
+Wrapper classes such as:
+
+
+Integer
+Byte
+Short
+Long
+Float
+Double
+Character
+Boolean
+
+
+
+belong to java.lang.
+
+
+Therefore, we do not need to explicitly write an import statement for them.
+
+
+
+7. Autoboxing
+
+
+Converting a primitive into its corresponding wrapper object automatically is called autoboxing.
+
+
+Example:
+
+
+int v = 16;
+
+Integer i = v;
+
+
+
+Java automatically converts:
+
+
+int → Integer
+
+
+
+Java 5 introduced automatic boxing/unboxing.
+
+
+
+8. Unboxing
+
+
+Converting a wrapper object into its corresponding primitive automatically is called unboxing.
+
+
+Example:
+
+
+Integer i = 18;
+
+int v = i;
+
+
+
+Java automatically converts:
+
+
+Integer → int
+
+
+
+Before automatic boxing/unboxing, we could explicitly use methods such as:
+
+
+Integer.valueOf()
+intValue()
+
+
+
+
+9. Creating Integer Objects
+
+
+Older code could use:
+
+
+Integer i = new Integer(15);
+
+
+
+But the constructor new Integer(15) is deprecated.
+
+
+Instead:
+
+
+Integer i = Integer.valueOf(15);
+
+
+
+valueOf() is a static method.
+
+
+With autoboxing, we can simply write:
+
+
+Integer i = 15;
+
+
+
+
+10. String → Integer / int
+
+
+We can convert a numeric String into an int using:
+
+
+String s = "123";
+
+int value = Integer.parseInt(s);
+
+
+
+parseInt() returns an int.
+
+
+You can then autobox it if you want an Integer:
+
+
+Integer value = Integer.parseInt(s);
+
+
+
+Important
+
+
+If the String doesn't contain a valid integer:
+
+
+String s = "FLM";
+
+int value = Integer.parseInt(s);
+
+
+
+It throws:
+
+
+NumberFormatException
+
+
+
+
+11. int → String
+
+
+We can convert an int into a String using:
+
+
+int i = 23;
+
+String s = String.valueOf(i);
+
+
+
+
+12. Character Wrapper Class
+
+
+Older code:
+
+
+Character c = new Character('A');
+
+
+
+The constructor is deprecated.
+
+
+Instead:
+
+
+Character c = Character.valueOf('A');
+
+
+
+With autoboxing:
+
+
+Character c = 'x';
+
+
+
+
+Useful Character Methods
+
+
+The Character class provides methods such as:
+
+
+Character.isDigit(value);
+Character.isLetter(value);
+Character.isWhitespace(value);
+Character.toLowerCase(value);
+Character.toUpperCase(value);
+
+
+
+For example:
+
+
+Character.isDigit('5');      // true
+Character.isLetter('A');     // true
+Character.isWhitespace(' '); // true
+
+
+
+isDigit(), isLetter(), and isWhitespace() return a boolean.
+
+
+toLowerCase() and toUpperCase() return a character.
+
+
+
+13. Wrapper Classes Are Immutable
+
+
+Wrapper classes are immutable.
+
+
+They are also final classes, so they cannot be inherited.
+
+
+For example:
+
+
+Integer i = 10;
+i = 20;
+
+
+
+The original Integer object containing 10 is not modified. A new value/object is assigned.
+
+
+Remember:
+
+
+
+
+Wrapper classes → Immutable + Final
+
+
+
+
+Final means we cannot extend/inherit the wrapper class.
+
+
+
+14. Breakdown of System.out.println()
+
+
+Let's understand:
+
+
+System.out.println("Hello");
+
+
+
+There are three important parts:
+
+
+System
+
+
+System is a class.
+
+
+out
+
+
+out is a static variable of the System class.
+
+
+Its type is:
+
+
+PrintStream
+
+
+
+So conceptually:
+
+
+System
+  ↓
+out
+  ↓
+PrintStream object
+
+
+
+println()
+
+
+println() is a method of the PrintStream class.
+
+
+Therefore:
+
+
+System.out.println("Hello");
+
+
+
+means we are accessing the out object and calling its println() method.
+
+
+
+15. System.out as a Has-A Relationship
+
+
+This is also an example of a Has-A relationship.
+
+
+Conceptually:
+
+
+System HAS-A out
+
+
+
+where out is a PrintStream reference.
+
+
+Similarly:
+
+
+class Engine {
+    int capacity;
+}
+
+class Car {
+    Engine e = new Engine();
+}
+
+
+
+Then we can access:
+
+
+Car c = new Car();
+
+c.e.capacity;
+
+
+
+Here:
+
+
+
+
+Car HAS-A Engine
+
+
+
+
+and Engine has a capacity.
+
+
+
+16. Arrays of User-Defined Classes
+
+
+An array doesn't have to contain only primitive values.
+
+
+We can create an array of our own class objects.
+
+
+Example:
+
+
+class Employee {
+    int id;
+    String name;
+}
+
+
+
+We can create:
+
+
+Employee[] employees = new Employee[3];
+
+
+
+This creates an array capable of holding 3 Employee references.
+
+
+Important: this statement does not create three Employee objects.
+
+
+Initially:
+
+
+employees
+   ↓
+[ null | null | null ]
+
+
+
+We need to create the individual objects:
+
+
+employees[0] = new Employee();
+employees[1] = new Employee();
+employees[2] = new Employee();
+
+
+
+Now:
+
+
+employees
+   ↓
+[ Employee object | Employee object | Employee object ]
+
+
+
+Key Point
+
+
+
+
+Employee[] stores references to Employee objects, not the actual Employee objects themselves.
+
+
+
+
+
+⭐ Quick Revision
+
+
+
+
+Has-A → One class contains another class's reference.
+
+
+Composition → Strong Has-A / tight coupling.
+
+
+Aggregation → Weak Has-A / loose coupling.
+
+
+Wrapper classes → Object representation of primitives.
+
+
+Collections use wrapper classes, not primitives.
+
+
+Primitive → Wrapper = Autoboxing.
+
+
+Wrapper → Primitive = Unboxing.
+
+
+Integer.parseInt("123") → int.
+
+
+Invalid numeric String → NumberFormatException.
+
+
+String.valueOf(23) → "23".
+
+
+Wrapper classes are immutable and final.
+
+
+System → out → PrintStream → println().
+
+
+Employee[] → Array of Employee references.
+
+
+new Employee[3] creates the array, not three Employee objects.
+
+
+
+
